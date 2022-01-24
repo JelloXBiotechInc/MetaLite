@@ -12,8 +12,7 @@ The following is a set of guidelines for contributing to MetaLite and its packag
 [I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
 
 [What should I know before I get started?](#what-should-i-know-before-i-get-started)
-  * [Atom and Packages](#atom-and-packages)
-  * [Atom Design Decisions](#design-decisions)
+  * [MetaLite and Packages](#metalite-and-packages)
 
 [How Can I Contribute?](#how-can-i-contribute)
   * [Reporting Bugs](#reporting-bugs)
@@ -22,10 +21,6 @@ The following is a set of guidelines for contributing to MetaLite and its packag
 
 [Styleguides](#styleguides)
   * [Git Commit Messages](#git-commit-messages)
-  * [JavaScript Styleguide](#javascript-styleguide)
-  * [CoffeeScript Styleguide](#coffeescript-styleguide)
-  * [Specs Styleguide](#specs-styleguide)
-  * [Documentation Styleguide](#documentation-styleguide)
 
 [Additional Notes](#additional-notes)
   * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
@@ -133,9 +128,9 @@ While the prerequisites above must be satisfied prior to having your pull reques
 
 ### Issue and Pull Request Labels
 
-This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across all Atom repositories, but some are specific to `JelloXBiotechInc/MetaLite`.
+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across all MetaLite repositories, but some are specific to `JelloXBiotechInc/MetaLite`.
 
-[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `JelloXBiotechInc/MetaLite` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3AMetaLite+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `JelloXBiotechInc/MetaLite` which haven't been reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3AJelloXBiotechInc%2FMetaLite+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `JelloXBiotechInc/MetaLite` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `JelloXBiotechInc/MetaLite` and all JelloXBiotechInc-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3AJelloXBiotechInc+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `JelloXBiotechInc/MetaLite` which haven't been reviewed yet](https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3AJelloXBiotechInc%2FMetaLite+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `JelloXBiotechInc/MetaLite` only and also across all MetaLite repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.
 
 The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.
 
@@ -157,18 +152,18 @@ Please open an issue on `JelloXBiotechInc/MetaLite` if you have suggestions for 
 | `duplicate` | [search][search-MetaLite-repo-label-duplicate] | [search][search-JelloXBiotechInc-org-label-duplicate] | Issues which are duplicates of other issues, i.e. they have been reported before. |
 | `wontfix` | [search][search-MetaLite-repo-label-wontfix] | [search][search-JelloXBiotechInc-org-label-wontfix] | The MetaLite core team has decided not to fix these issues for now, either because they're working as intended or for some other reason. |
 | `invalid` | [search][search-MetaLite-repo-label-invalid] | [search][search-JelloXBiotechInc-org-label-invalid] | Issues which aren't valid (e.g. user errors). |
-| `package-idea` | [search][search-MetaLite-repo-label-package-idea] | [search][search-JelloXBiotechInc-org-label-package-idea] | Feature request which might be good candidates for new packages, instead of extending MetaLite or core Atom packages. |
+| `package-idea` | [search][search-MetaLite-repo-label-package-idea] | [search][search-JelloXBiotechInc-org-label-package-idea] | Feature request which might be good candidates for new packages, instead of extending MetaLite or core MetaLite packages. |
 
 #### Topic Categories
 
 | Label name | `JelloXBiotechInc/MetaLite` :mag_right: | `JelloXBiotechInc`‑org :mag_right: | Description |
 | --- | --- | --- | --- |
-| `windows` | [search][search-MetaLite-repo-label-windows] | [search][search-JelloXBiotechInc-org-label-windows] | Related to Atom running on Windows. |
+| `windows` | [search][search-MetaLite-repo-label-windows] | [search][search-JelloXBiotechInc-org-label-windows] | Related to MetaLite running on Windows. |
 | `documentation` | [search][search-MetaLite-repo-label-documentation] | [search][search-JelloXBiotechInc-org-label-documentation] | Related to any type of documentation. |
 | `performance` | [search][search-MetaLite-repo-label-performance] | [search][search-JelloXBiotechInc-org-label-performance] | Related to performance. |
 | `security` | [search][search-MetaLite-repo-label-security] | [search][search-JelloXBiotechInc-org-label-security] | Related to security. |
 | `ui` | [search][search-MetaLite-repo-label-ui] | [search][search-JelloXBiotechInc-org-label-ui] | Related to visual design. |
-| `api` | [search][search-MetaLite-repo-label-api] | [search][search-JelloXBiotechInc-org-label-api] | Related to Atom's public APIs. |
+| `api` | [search][search-MetaLite-repo-label-api] | [search][search-JelloXBiotechInc-org-label-api] | Related to MetaLite's public APIs. |
 | `uncaught-exception` | [search][search-MetaLite-repo-label-uncaught-exception] | [search][search-JelloXBiotechInc-org-label-uncaught-exception] | Issues about uncaught exceptions, normally created from the Notifications package. |
 | `crash` | [search][search-MetaLite-repo-label-crash] | [search][search-JelloXBiotechInc-org-label-crash] | Reports of MetaLite completely crashing. |
 | `auto-indent` | [search][search-MetaLite-repo-label-auto-indent] | [search][search-JelloXBiotechInc-org-label-auto-indent] | Related to auto-indenting text. |
@@ -192,8 +187,8 @@ Please open an issue on `JelloXBiotechInc/MetaLite` if you have suggestions for 
 | Label name | `JelloXBiotechInc/MetaLite` :mag_right: | `JelloXBiotechInc`‑org :mag_right: | Description
 | --- | --- | --- | --- |
 | `work-in-progress` | [search][search-MetaLite-repo-label-work-in-progress] | [search][search-JelloXBiotechInc-org-label-work-in-progress] | Pull requests which are still being worked on, more changes will follow. |
-| `needs-review` | [search][search-MetaLite-repo-label-needs-review] | [search][search-JelloXBiotechInc-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or Atom core team. |
-| `under-review` | [search][search-MetaLite-repo-label-under-review] | [search][search-JelloXBiotechInc-org-label-under-review] | Pull requests being reviewed by maintainers or Atom core team. |
+| `needs-review` | [search][search-MetaLite-repo-label-needs-review] | [search][search-JelloXBiotechInc-org-label-needs-review] | Pull requests which need code review, and approval from maintainers or MetaLite core team. |
+| `under-review` | [search][search-MetaLite-repo-label-under-review] | [search][search-JelloXBiotechInc-org-label-under-review] | Pull requests being reviewed by maintainers or MetaLite core team. |
 | `requires-changes` | [search][search-MetaLite-repo-label-requires-changes] | [search][search-JelloXBiotechInc-org-label-requires-changes] | Pull requests which need to be updated based on review comments and then reviewed again. |
 | `needs-testing` | [search][search-MetaLite-repo-label-needs-testing] | [search][search-JelloXBiotechInc-org-label-needs-testing] | Pull requests which need manual testing. |
 
