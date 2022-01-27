@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{298D6F05-69AE-4807-A951-FAE518D0D791}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>wpfpslib</RootNamespace>
+    <AssemblyName>wpfpslib</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effects.cs" />
+    <Compile Include="ShaderEffectBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="ps-compiled\PseudoStaining.ps" />
+    <Resource Include="ps-compiled\HE.ps" />
+    <Resource Include="ps-compiled\BlackHole.ps" />
+    <Resource Include="ps-compiled\ChannelMask.ps" />
+    <Resource Include="ps-compiled\CubicChromaticAbberation.ps" />
+    <Resource Include="ps-compiled\CubicLensDistortion.ps" />
+    <Resource Include="ps-compiled\DiagonalPixelation.ps" />
+    <Resource Include="ps-compiled\GlassTiles.ps" />
+    <Resource Include="ps-compiled\Grayscale.ps" />
+    <Resource Include="ps-compiled\HexagonalPixelation.ps" />
+    <Resource Include="ps-compiled\IHC.ps" />
+    <Resource Include="ps-compiled\Invert.ps" />
+    <Resource Include="ps-compiled\LinearChromaticAbberation.ps" />
+    <Resource Include="ps-compiled\NormalMap.ps" />
+    <Resource Include="ps-compiled\Pixelation.ps" />
+    <Resource Include="ps-compiled\Ripple.ps" />
+    <Resource Include="ps-compiled\RoundedGlassTiles.ps" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ps-hlsl\BlackHole.fx" />
+    <Content Include="ps-hlsl\ChannelMask.fx" />
+    <Content Include="ps-hlsl\CubicChromaticAbberation.fx" />
+    <Content Include="ps-hlsl\CubicLensDistortion.fx" />
+    <Content Include="ps-hlsl\DiagonalPixelation.fx" />
+    <Content Include="ps-hlsl\GlassTiles.fx" />
+    <Content Include="ps-hlsl\Grayscale.fx" />
+    <Content Include="ps-hlsl\PseudoStaining.fx" />
+    <Content Include="ps-hlsl\HE.fx" />
+    <Content Include="ps-hlsl\HexagonalPixelation.fx" />
+    <Content Include="ps-hlsl\IHC.fx" />
+    <Content Include="ps-hlsl\Invert.fx" />
+    <Content Include="ps-hlsl\LinearChromaticAbberation.fx" />
+    <Content Include="ps-hlsl\NormalMap.fx" />
+    <Content Include="ps-hlsl\Pixelation.fx" />
+    <Content Include="ps-hlsl\Ripple.fx" />
+    <Content Include="ps-hlsl\RoundedGlassTiles.fx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(SolutionDir)pscompiler.exe" "$(ProjectDir)ps-hlsl" "$(ProjectDir)ps-compiled"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

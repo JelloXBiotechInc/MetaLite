@@ -1,0 +1,101 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow.AboutUs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+      mc:Ignorable="d" 
+        Icon="../Image/JelloX.ico"
+      SizeToContent="Height"
+        Width="600"
+      WindowStyle="ThreeDBorderWindow"
+      Title="About JelloX MetaLite">
+
+
+    <Window.Resources>
+        <DataTemplate x:Key="MyTemplate" DataType="{x:Type local:IconInfo}">
+            <Label Height="30" Width="500">
+                <Label.Content>
+                    <DockPanel>
+                        <Image Source="{Binding Icon}" DockPanel.Dock="Left" Width="20" Height="20"/>
+                        <TextBlock Text=" Icon made by " DockPanel.Dock="Left" Margin="10,0,0,0"/>
+                        <TextBlock DockPanel.Dock="Left">
+                                <Hyperlink NavigateUri="{Binding Url}" Name="linkHelp" ToolTip="Author Credits" Click="linkHelp_Click_1">
+                                    <Hyperlink.Inlines>
+                                        <Run Text="{Binding Author}"/>
+                                    </Hyperlink.Inlines>
+                                </Hyperlink>
+                        </TextBlock>
+                        <TextBlock Text="from www.flaticon.com" DockPanel.Dock="Left" Margin="5,0,0,0"/>
+                    </DockPanel>
+                </Label.Content>
+            </Label>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid >
+        <StackPanel>
+            <Grid Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Image Height="60" HorizontalAlignment="Left" Margin="10,0,0,20" VerticalAlignment="Center" >
+                            <Image.Source>
+                                <BitmapImage DecodePixelWidth="200" UriSource="../Image/jellox_black.png"/>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                    <Grid Margin="10">
+                        <StackPanel>
+                            <Label Content="MateLite" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            </Label>
+                            <Label x:Name="Copyright" Content="Copyright © ---- by JelloX Biotech Inc. All Rights Reserved." HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+                            <Label Name="pbc_version" Content=" version  1.0.0.0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Content="Contact to us:        " />
+
+                                <Label Grid.Row="0" Grid.Column="1" >
+                                    <Hyperlink NavigateUri="https://www.jellox.com/" Name="linkHelp" ToolTip="Author Credits" Click="linkHelp_Click_1">
+                                        <Hyperlink.Inlines>
+                                            <Run Text="https://www.jellox.com/"/>
+                                        </Hyperlink.Inlines>
+                                    </Hyperlink>
+                                </Label>
+                                <Label Grid.Row="1" Grid.Column="0" Content="Suggestions:" />
+
+                                <Label Grid.Row="1" Grid.Column="1">
+                                    <Hyperlink NavigateUri="https://docs.google.com/forms/d/e/1FAIpQLSdQK_VjWoke77R6HWXYsgrbVyCPL3JuWgyluY-Hi9DfuedJgA/viewform" Name="Commen" ToolTip="Author Credits" Click="linkHelp_Click_1">
+                                        <Hyperlink.Inlines>
+                                            <Run Text="Feedback form"/>
+                                        </Hyperlink.Inlines>
+                                    </Hyperlink>
+                                </Label>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal">
+                                
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                <Label Content="Included third parties:" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Visibility="Collapsed"></Label>
+                <ListView x:Name="lvIconInfo" ItemTemplate="{StaticResource MyTemplate}" Visibility="Collapsed" Height="180" Width="545" Margin="10,175,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+
+                </ListView>
+
+
+            </Grid>
+            <TextBlock Name="WarningInfo" Text="" HorizontalAlignment="Left" Margin="10,0,10,10" VerticalAlignment="Top" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Name="FDAWarning" Text="Warning: " HorizontalAlignment="Left" Margin="10,0,10,10" VerticalAlignment="Top" TextWrapping="Wrap"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

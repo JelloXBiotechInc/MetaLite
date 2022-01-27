@@ -1,0 +1,60 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow.ReportPreview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"        
+        xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+        xmlns:Statistic="clr-namespace:MetaLite_Viewer.Model"        
+        xmlns:Report="clr-namespace:report;assembly=report"        
+        xmlns:assembly="clr-namespace:System;assembly=mscorlib"        
+        ContentRendered="Window_ContentRendered"
+        mc:Ignorable="d"
+        Title="ReportPreview" SizeToContent="Width"
+        d:DesignHeight="3000"
+        >
+    <Window.Resources>
+        <DataTemplate x:Key="reportHeader">
+            <StackPanel Orientation="Vertical">
+                <Label HorizontalAlignment="Right" FontSize="12" FontWeight="ExtraBold" Content="Department of Pathology"></Label>
+                <Label HorizontalAlignment="Center" FontSize="14" FontWeight="ExtraBold" Content="Surgical Pathology Report"></Label>
+                <Separator Background="Black">
+                    <Separator.RenderTransform>
+                        <ScaleTransform ScaleY="1.5" />
+                    </Separator.RenderTransform>
+                </Separator>
+            </StackPanel>
+        </DataTemplate>
+        <ObjectDataProvider x:Key="ExpressionEnum" MethodName="GetValues" 
+                            ObjectType="{x:Type assembly:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="Statistic:ExpressionOpt"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <DataTemplate x:Key="ReportFooterDataTemplate">
+            <TextBlock Text="{DynamicResource PageNumber}" HorizontalAlignment="Right"/>
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid x:Name="GridBody">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#333333">
+            <Button HorizontalAlignment="Right" BorderThickness="0" Background="#00ffffff" Foreground="#ddffffff" Click="Button_Click" Content="" FontSize="25" FontFamily="Segoe MDL2 Assets" ToolTip="Export To PDF" Margin="5 10 15 10" Padding="5"></Button>
+        </Grid>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                
+                <Border BorderBrush="Gray" BorderThickness="50">
+                    <StackPanel Margin="40" Width="21cm">
+                        <Report:PdfProducer x:Name="ExportStackPanel"></Report:PdfProducer>
+                        <Separator/>
+                        <Button Content="+ Attach statistic Data" Click="AttachStatistic_Button_Click"></Button>
+                    </StackPanel>
+                </Border>
+            </StackPanel>            
+        </ScrollViewer>
+    </Grid>
+</Window>

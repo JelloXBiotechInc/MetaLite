@@ -1,0 +1,19 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow.UserManual"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+        xmlns:wpf="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
+        
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        
+        Title="UserManual" Height="600" Width="1100">
+
+    <Grid>
+        <wpf:WebView x:Name="body" ></wpf:WebView>
+        
+        <WebBrowser x:Name="offline"></WebBrowser>
+    </Grid>
+</Window>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow.FormatConvert"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Background="#54565C"
+        SizeToContent="WidthAndHeight"
+        Title="FormatConvert">
+    <Grid x:Name="body">
+        <StackPanel Orientation="Vertical" Margin="15 20 15 5" >
+            <Grid Height="30" Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="1 1 0 0" BorderBrush="#333" CornerRadius="1 0 5 0">
+                    <TextBlock x:Name="SelectFileTextBlock" TextAlignment="Center" Background="#3f3f3f" FontSize="15" Foreground="#eee" Padding="15 5 15 2">Convert image from...</TextBlock>
+                </Border>
+                <Button Grid.Column="1" Margin="5 0 0 0" Padding="15 5 15 2" FontSize="15" BorderThickness="0" Click="SelectFileButton_Click">Select file</Button>
+            </Grid>
+            <Grid Height="30" Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="1 1 0 0" BorderBrush="#333" CornerRadius="1 0 5 0">
+                    <TextBlock x:Name="SelectOutputTextBlock" TextAlignment="Center" Background="#3f3f3f" FontSize="15" Foreground="#eee" Padding="15 5 15 2">Convert to...</TextBlock>
+                </Border>
+                <Button x:Name="SelectOutputButton" Grid.Column="1" IsEnabled="False" Margin="5 0 0 0" Padding="15 5 15 2" FontSize="15" BorderThickness="0" Click="SelectOutputButton_Click">Output file</Button>
+            </Grid>
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" TextAlignment="Center" FontSize="15" Foreground="#eee">Quality</TextBlock>
+                <Slider x:Name="Quality" Grid.Column="1" AutoToolTipPlacement="TopLeft" Value="70" Maximum="100" Minimum="50"  IsSnapToTickEnabled="True" TickFrequency="1" SmallChange="1" TickPlacement="BottomRight" ></Slider>
+            </Grid>
+            <Separator Margin="0 0 0 10"/>
+            <DockPanel Height="30">
+                <Button x:Name="ConvertButton" IsEnabled="False" BorderThickness="0" FontSize="15" Padding="20 0 20 0" Click="ConvertButton_Click">Convert</Button>
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>

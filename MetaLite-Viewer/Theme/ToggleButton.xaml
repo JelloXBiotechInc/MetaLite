@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ToggleButton">
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Border x:Name="frame" CornerRadius="9.3">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.2,0" EndPoint="0.5,0.8">
+                                    <GradientStop x:Name="GradientStop1" Color="#FF64FF42" Offset="0.0" />
+                                    <GradientStop x:Name="GradientStop3" Color="#FF55EE33" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Ellipse x:Name="thumb"
+                                 Fill="White"
+                                 HorizontalAlignment="Left" VerticalAlignment="Center" Margin="1,1,1,1"
+                                 Width="18" Height="18">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect Color="#11555555" BlurRadius="10" ShadowDepth="0"  Direction="0"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Ellipse.Loaded" SourceName="thumb">
+                            <SkipStoryboardToFill BeginStoryboardName="checkedSB" />
+                            
+                        </EventTrigger>
+                        <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="true">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard x:Name="checkedSB">
+                                    <Storyboard Storyboard.TargetProperty="Margin" Storyboard.TargetName="thumb">
+                                        <ThicknessAnimation To="11,0,0,0" Duration="00:00:00.1" AccelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                                <BeginStoryboard x:Name="checkedSB2">
+                                    <Storyboard Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
+                                    <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[0].Color"
+                                            To="#FF64FF42" Duration="0:0:0.1"/>
+
+                                    <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[1].Color"
+                                            To="#FF55EE33" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard x:Name="uncheckedSB">
+                                    <Storyboard Storyboard.TargetProperty="Margin" Storyboard.TargetName="thumb">
+                                        <ThicknessAnimation To="1,0,1,0" Duration="00:00:00.1" DecelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                                <BeginStoryboard x:Name="uncheckedSB2">
+                                    <Storyboard>
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[0].Color"
+                                            To="#333333" Duration="0:0:0.1" DecelerationRatio="1"/>
+
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[1].Color"
+                                            To="#666666" Duration="0:0:0.1" DecelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="false">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard x:Name="uncheckedSB_">
+                                    <Storyboard Storyboard.TargetProperty="Margin" Storyboard.TargetName="thumb">
+                                        <ThicknessAnimation To="1,0,1,0" Duration="00:00:00.1" DecelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                                <BeginStoryboard x:Name="uncheckedSB2_">
+                                    <Storyboard>
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[0].Color"
+                                            To="#333333" Duration="0:0:0.1" DecelerationRatio="1"/>
+
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[1].Color"
+                                            To="#666666" Duration="0:0:0.1" DecelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard x:Name="checkedSB_">
+                                    <Storyboard Storyboard.TargetProperty="Margin" Storyboard.TargetName="thumb">
+                                        <ThicknessAnimation To="11,0,0,0" Duration="00:00:00.1" AccelerationRatio="1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                                <BeginStoryboard x:Name="checkedSB2_">
+                                    <Storyboard Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)">
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[0].Color"
+                                            To="#FF64FF42" Duration="0:0:0.1"/>
+
+                                        <ColorAnimation 
+                                            Storyboard.TargetName="frame"
+                                            Storyboard.TargetProperty="Background.GradientStops[1].Color"
+                                            To="#FF55EE33" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

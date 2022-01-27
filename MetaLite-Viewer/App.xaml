@@ -1,0 +1,25 @@
+﻿<Application x:Class="MetaLite_Viewer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MetaLite_Viewer"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme\Menu.xaml"/>
+                <ResourceDictionary Source="Theme\Button.xaml"/>
+                <ResourceDictionary Source="Theme\DataGrid.xaml"/>
+                <ResourceDictionary Source="Theme\ToggleButton.xaml"/>
+                <ResourceDictionary Source="Theme\Polyline.xaml"/>
+                <ResourceDictionary Source="Theme\RangeSlider.xaml"/>
+                <ResourceDictionary Source="Theme\Tab.xaml"/>
+                <ResourceDictionary Source="Theme\Slider.xaml"/>
+                <ResourceDictionary Source="Theme\ProgressBar.xaml"/>
+                <ResourceDictionary Source="Theme\Vistual.xaml"/>
+                <ResourceDictionary Source="Theme\ComboBox.xaml"/>
+                <ResourceDictionary Source="Theme\Window.Universal.xaml" />
+                <ResourceDictionary Source="Theme\MainFunctionButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

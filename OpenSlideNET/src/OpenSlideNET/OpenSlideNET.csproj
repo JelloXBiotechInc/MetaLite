@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>OpenSlideNET</PackageId>
+    <Title>OpenSlideNET</Title>
+    <TargetFrameworks>net472;</TargetFrameworks>
+    <Description>.NET bindings for OpenSlide.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0' AND '$(TargetFramework)' != 'netstandard2.1'">
+    <DefineConstants>$(DefineConstants);NO_NULLABLE_REFERENCE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+    <PackageReference Include="System.ValueTuple" Version="$(SystemValueTuplePackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\interop\src\OpenSlideNET.Interop\OpenSlideNET.Interop.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+  </ItemGroup>
+</Project>

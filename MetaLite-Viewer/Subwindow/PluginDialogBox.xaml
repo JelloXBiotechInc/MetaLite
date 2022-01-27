@@ -1,0 +1,126 @@
+﻿<Window 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="MetaLite_Viewer.Subwindow.PluginDialogBox"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+    Title="Selection"
+    
+    SizeToContent="WidthAndHeight"
+    MinHeight="10"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner" 
+    Background="#AF333333" 
+    ContentRendered="Window_ContentRendered">
+    <Window.Resources>
+        <Storyboard x:Key="WaitStoryboard" RepeatBehavior="Forever" >
+            <DoubleAnimation
+            Storyboard.TargetName="Wait"
+            Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)"
+            From="0"
+            To="90"
+            BeginTime="0:0:0"
+            Duration="0:0:0.5"      
+            />
+            <DoubleAnimation
+            Storyboard.TargetName="Wait"
+            Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)"
+            From="90"
+            To="180"
+            BeginTime="0:0:0.5"
+            Duration="0:0:0.25"
+            />
+            <DoubleAnimation
+            Storyboard.TargetName="Wait"
+            Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)"
+            From="180"
+            To="270"
+            BeginTime="0:0:0.75"
+            Duration="0:0:0.125"
+            
+            />
+            <DoubleAnimation
+            Storyboard.TargetName="Wait"
+            Storyboard.TargetProperty="(TextBlock.RenderTransform).(RotateTransform.Angle)"
+            From="270"
+            To="360"
+                BeginTime="0:0:0.875"
+            Duration="0:0:0.5"
+            DecelerationRatio="1"            
+            />
+        </Storyboard>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FFDDDDDD"></Setter>
+            <Setter Property="Margin" Value="-15,0,10,5"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFDDDDDD"></Setter>            
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="thisWindow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" x:Name="contentBody" Orientation="Vertical" HorizontalAlignment="Left" Margin="30,10,30,10">
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" x:Name="SliderPanel" Margin="30,-15,30,10">
+            <Label Foreground="#FFDDDDDD" Margin="-15,0,10,5" >Pages</Label>
+            <Controls:RangeSlider Style="{DynamicResource MahApps.Styles.RangeSlider.Win10}" x:Name="RangeSelector"
+                
+                Minimum="1"
+                MinRangeWidth="1"
+                MinRange="0"
+                
+                AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0" IsSnapToTickEnabled="True"
+                MoveWholeRange="False" IsMoveToPointEnabled="True" ExtendedMode="True">
+            </Controls:RangeSlider>
+            <Grid Margin="1 0 1 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Foreground="#DDDDDD" TextAlignment="Left">1</TextBlock>
+                <Grid Grid.Column="1" Margin="0 3 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Foreground="#DDDDDD" FontSize="8" TextAlignment="Right" Text="{Binding ElementName=RangeSelector, Path=LowerValue}"></TextBlock>
+                    <TextBlock Grid.Column="1" Foreground="#DDDDDD" FontSize="8" TextAlignment="Center">-</TextBlock>
+                    <TextBlock Grid.Column="2" Foreground="#DDDDDD" FontSize="8" TextAlignment="Left" Text="{Binding ElementName=RangeSelector, Path=UpperValue}"></TextBlock>
+                </Grid>
+                <TextBlock Grid.Column="4" Foreground="#DDDDDD" TextAlignment="Right" Text="{Binding ElementName=RangeSelector, Path=Maximum}"></TextBlock>
+            </Grid>
+            <Separator/>
+        </StackPanel>
+        
+        <!-- Accept or Cancel -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,5,10,5">
+            <Button Width="70" Height="25" Margin="5,0,5,0" Name="okButton" Click="okButton_Click" IsDefault="True">OK</Button>
+            <Button Width="70" Height="25" Margin="5,0,5,0" Name="cancelButton" IsCancel="True">Cancel</Button>
+        </StackPanel>
+        
+        <Grid x:Name="waitingBlocker" Height="{Binding ElementName=thisWindow, Path=ActualHeight}" Width="{Binding ElementName=thisWindow, Path=ActualWidth}" Grid.Row="0" Grid.RowSpan="4" Background="#dd111111" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Name="Wait" FontFamily="Segoe MDL2 Assets" FontSize="50" Foreground="#EEEEEE" Text="" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <TextBlock.RenderTransform>
+                    <RotateTransform Angle="0" />
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Grid.Row="1" x:Name="statusText" Foreground="#cccccc" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,10,10,10" TextAlignment="Center" TextWrapping="Wrap">It will take about 2 minutes to initialize MetaLite-Server.</TextBlock>
+        </Grid>
+        
+    </Grid >
+
+</Window>

@@ -1,0 +1,116 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:colorPickerWpf="clr-namespace:ColorPickerWPF"
+    x:Class="ColorPickerWPF.ColorPickerControl"
+             mc:Ignorable="d" d:DesignWidth="560" >
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0 5 0 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="370"  />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" >
+
+            <Canvas Grid.Column="0" x:Name="ColorCanvas" Width="360" Height="255" MouseDown="SampleImage_OnMouseDown">
+                <Grid Height="255" Width="360">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="#ff0000" Offset="0.0" />
+                            <GradientStop Color="#ffFF00" Offset="0.16" />
+                            <GradientStop Color="#00FF00" Offset="0.33" />
+                            <GradientStop Color="#00ffff" Offset="0.5" />
+                            <GradientStop Color="#0000ff" Offset="0.66" />
+                            <GradientStop Color="#ff00ff" Offset="0.83" />
+                            <GradientStop Color="#ff0000" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+                <Grid x:Name="SampleImage" Height="255" Width="360">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="#ffffffff" Offset="0.0" />
+                            
+                            <GradientStop Color="#00ffffff" Offset="0.49999" />
+                            <GradientStop Color="#00000000" Offset="0.50001" />
+                            
+                            <GradientStop Color="#ff000000" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+                <!--<Image x:Name="SampleImage" Opacity="0" Source="pack://application:,,,/ColorPickerWPF;component/Resources/colorpicker1.png" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"
+                            Width="360" Height="255" Stretch="UniformToFill"
+			            />-->
+                <Grid Margin="0" x:Name="Aim" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Ellipse  HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="8" Fill="Transparent" StrokeThickness="3" Stroke="#95000000"/>
+
+                    <Ellipse HorizontalAlignment="Center" VerticalAlignment="Center" Width="6" Height="6" Fill="Transparent" StrokeThickness="1" Stroke="White"/>
+                </Grid>
+
+            </Canvas>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical">
+                <colorPickerWpf:SliderRow x:Name="RSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="RSlider_OnOnValueChanged" FormatString="F0" />
+                <colorPickerWpf:SliderRow x:Name="GSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="GSlider_OnOnValueChanged" FormatString="F0"/>
+                <colorPickerWpf:SliderRow x:Name="BSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="BSlider_OnOnValueChanged" FormatString="F0"/>
+                <colorPickerWpf:SliderRow x:Name="ASlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                       OnValueChanged="ASlider_OnOnValueChanged" FormatString="F0"/>
+
+                <Separator/>
+                <colorPickerWpf:SliderRow x:Name="HSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="HSlider_OnOnValueChanged" FormatString="F0"/>
+                <colorPickerWpf:SliderRow x:Name="SSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="SSlider_OnOnValueChanged"/>
+                <colorPickerWpf:SliderRow x:Name="VSlider" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                             OnValueChanged="VSlider_OnOnValueChanged"/>
+                <colorPickerWpf:ColorPickerSwatch x:Name="CustomColorSwatch" HorizontalAlignment="Left" Margin="4,289,0,0" VerticalAlignment="Stretch" Width="230" 
+                                              Editable="true" OnPickColor="Swatch_OnOnPickColor"/>
+                <Label x:Name="customColorsLabel" Content="Custom Colors (Ctrl+Click to set)" HorizontalAlignment="Left" Margin="0,258,0,0" VerticalAlignment="Top"/>
+
+            </StackPanel>
+            
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="5 5 5 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border x:Name="ColorDisplayBorder" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    BorderBrush="Black" Background="White" BorderThickness="2"  Width="58" Height="58" Margin="0,0,0,0"/>
+
+                <colorPickerWpf:ColorPickerSwatch x:Name="Swatch1" Height="60" Margin="60,0,0,0" VerticalAlignment="Top"
+                                           OnPickColor="Swatch_OnOnPickColor"/>
+            </Grid>
+            <colorPickerWpf:ColorPickerSwatch x:Name="Swatch2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch"
+                                           OnPickColor="Swatch_OnOnPickColor"/>
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1130 @@
+﻿<Window x:Class="MetaLite_Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:helper="clr-namespace:MetaLite_Viewer.Helper"
+        xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+        xmlns:local="clr-namespace:MetaLite_Viewer.Model"
+        xmlns:Int="clr-namespace:MetaLite_Viewer.Interpretor"
+        xmlns:SubUnit="clr-namespace:MetaLite_Viewer.SubUnit"
+        xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+        xmlns:fx="clr-namespace:wpfpslib;assembly=wpfpslib"        
+        xmlns:helix="http://helix-toolkit.org/wpf"    
+        xmlns:WebView="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"        
+        mc:Ignorable="d" 
+        Title="MetaLite" 
+        WindowStartupLocation="CenterScreen"
+        Height="600" Width="1000"
+        Icon="Image/JelloX.ico"
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        ResizeMode="CanResizeWithGrip"
+        Drop="Window_Drop"
+        Focusable="True"
+        SizeChanged="Window_SizeChanged"
+        AllowDrop="True" PreviewKeyDown="Window_PreviewKeyDown" Closing="Window_Closing" Loaded="Window_Loaded"
+        FontFamily="Nirmala UI Semilight"
+        DataContext="{Binding RelativeSource={RelativeSource self}}"
+        >
+    <Window.Resources>
+        <local:MainWindowViewModel x:Key="sl"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <helper:BooleanToVisibilityInvertConverter x:Key="VisToBool"
+            True="Visible" 
+            False="Collapsed"/>
+        
+    </Window.Resources>
+
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF444444" Offset="0"/>
+            <GradientStop Color="#FF444444" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid x:Name="mainGrid">
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="799*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Height="30" Background="#202020">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="10,3,0,3">
+                <Image x:Name="logo" Width="61" Height="22" Source="Image/_jellox_white.png" RenderOptions.BitmapScalingMode="Fant"/>
+                <Image x:Name="logoGray" Visibility="Visible" Width="61" Height="22" Source="Image/jellox_gray.png" RenderOptions.BitmapScalingMode="Fant"/>                
+            </Grid>
+            
+            <Button Grid.Column="1" x:Name="fileNameTextBlock" Foreground="#EEEEEE" HorizontalAlignment="Stretch" Background="Transparent" BorderThickness="0" FontSize="16" PreviewMouseDoubleClick="fileNameTextBlock_PreviewMouseDoubleClick" Margin="0,0,0,0" PreviewMouseLeftButtonDown="Window_MouseLeftButtonDown">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="SnapsToDevicePixels" Value="true"/>
+                        <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Name="Border" BorderThickness="1"
+                    Background="#00000000"
+                    BorderBrush="#00000000">
+                                        <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#00000000" />
+                                        </Trigger>
+                                        <Trigger Property="IsDefaulted" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#00000000" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#00000000" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#00000000" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#00000000" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#00000000" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#00000000" />
+                                            <Setter Property="Foreground" Value="#EEEEEE"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Grid.Column="2" Click="MinimizeMenuItem_Click" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                            Content="" FontSize="12" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="SnapsToDevicePixels" Value="true"/>
+                        <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Name="Border" BorderThickness="1"
+                    Background="#00000000"
+                    BorderBrush="#00000000">
+                                        <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsDefaulted" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#808080" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#FF73A0FF" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#FF73A0FF" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#EEEEEE" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#AAAAAA" />
+                                            <Setter Property="Foreground" Value="#888888"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+
+            </Button>
+
+            <Button x:Name="sizemodebuttom" Grid.Column="3" Click="ScaleWindowMenuItem_Click" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                            Content="" FontSize="12" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="SnapsToDevicePixels" Value="true"/>
+                        <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Name="Border" BorderThickness="1"
+                    Background="#00000000"
+                    BorderBrush="#00000000">
+                                        <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsDefaulted" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#808080" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#FF73A0FF" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#FF73A0FF" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#EEEEEE" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#AAAAAA" />
+                                            <Setter Property="Foreground" Value="#888888"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+
+            </Button>
+            <Button Grid.Column="4" Click="ExitMenuItem_Click" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                            Content="" FontSize="12" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="SnapsToDevicePixels" Value="true"/>
+                        <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Name="Border" BorderThickness="1"
+                    Background="#00000000"
+                    BorderBrush="#00000000">
+                                        <ContentPresenter Margin="2" 
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" 
+                                 RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsDefaulted" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#202020" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#FF3030" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#993030" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#993030" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="false">
+                                            <Setter TargetName="Border" 
+                          Property="Background" Value="#EEEEEE" />
+                                            <Setter TargetName="Border" 
+                          Property="BorderBrush" Value="#AAAAAA" />
+                                            <Setter Property="Foreground" Value="#888888"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+
+            </Button>
+
+        </Grid>
+
+        <Menu x:Name="MainMenu" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Nirmala UI Semilight">
+            <MenuItem Header="File" FontSize="14">
+                <MenuItem x:Name="MenuOpenFile" Header="Open File" Command="ApplicationCommands.Open"/>
+                <MenuItem x:Name="MenuOpenAnnotation" Header="Open Annotation"/>
+                <Separator/>
+                <MenuItem x:Name="MenuSaveAnnotation" Header="Save Annotation" Command="ApplicationCommands.Save"/>
+                <MenuItem x:Name="MenuSaveAs" Header="Save Annotation As..."/>
+                <MenuItem x:Name="MenuSaveAll" Header="Save All Annotations"/>
+                <Separator/>
+                <MenuItem x:Name="MenuExportAnnotation" Header="Export Current Annotation"/>
+                <helper:RecentFileList x:Name="RecentFileList"></helper:RecentFileList>
+                <MenuItem Header="Auto Save" IsCheckable="True" Checked="SetAutoSaveTimer" Unchecked="UnsetAutoSaveTimer"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit MetaLite" Click="ExitMenuItem_Click" InputGestureText="Alt+F4"  Command="ApplicationCommands.Close"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" FontSize="14" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}">
+                <MenuItem x:Name="MenuUndo" Header="Undo" Command="ApplicationCommands.Undo" InputGestureText="Ctrl+Z"/>
+                <MenuItem x:Name="MenuRedo" Header="Redo" InputGestureText="Ctrl+Shift+Z"/>
+                <Separator/>
+                <MenuItem Header="Draw" Click="Manual_DrawingButtonClick" IsCheckable="True" InputGestureText="D" IsChecked="{Binding ElementName=manualDrawingButton, Path=IsChecked}"/>
+                <MenuItem Header="Eraser" Click="Manual_ErasingButtonClick" IsCheckable="True" InputGestureText="E" IsChecked="{Binding ElementName=manualErasingButton, Path=IsChecked}"/>
+                <MenuItem Header="Polygon Tool" Click="Manual_PolygonButtonClick" IsCheckable="True" InputGestureText="P" IsChecked="{Binding ElementName=manualPolygonButton, Path=IsChecked}"/>
+                <MenuItem Header="Snapshot" Click="Manual_RectangleButtonClick" IsCheckable="True" IsChecked="{Binding ElementName=manualRectangle, Path=IsChecked}"/>
+                <Separator/>
+                <MenuItem x:Name="MenuClean"  Header="Clean Annotation Layer" Click="CleanAnnotationButtonClick"/>
+                
+            </MenuItem>
+            <MenuItem Header="Image" FontSize="14">
+                <MenuItem Header="Format Convert" Click="FormatConvertMenuItem_Click">
+                    
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="View" FontSize="14">
+                <MenuItem Header="View Panel" IsCheckable="True" IsChecked="{Binding ElementName=ImagePanel, Path=IsSelected, Mode=TwoWay}" Click="MenuItemImagePanel_Click"></MenuItem>
+                <MenuItem Header="Statistics Panel" IsCheckable="True" IsChecked="{Binding ElementName=StatisticPanel, Path=IsSelected, Mode=TwoWay}" Click="MenuItemStatisticPanel_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Zoom" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}">
+                    <MenuItem Header="Zoom In" Click="MenuItemZoomIn_Click">
+
+                    </MenuItem>
+                    <MenuItem Header="Zoom Out" Click="MenuItemZoomOut_Click">
+
+                    </MenuItem>
+                    <MenuItem Header="Fit Window" Click="MenuItemFitWindos_Click">
+
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Render Mode">
+                    <MenuItem x:Name="Menu_Image_Mode_RGB" 
+                              Uid="0"
+                              IsCheckable="True" 
+                              Header="RGB" 
+                              Click="MenuItemRenderMode_Click" 
+                              IsChecked="{c:Binding ElementName=channelSelector, Path='RenderMode == 0'}"></MenuItem>
+                    <MenuItem x:Name="Menu_Image_Mode_HE" 
+                              Uid="1"
+                              IsCheckable="True" 
+                              Click="MenuItemRenderMode_Click" 
+                              IsChecked="{c:Binding ElementName=channelSelector, Path='RenderMode == 1'}"
+                              Header="Pseudo H&amp;E"></MenuItem>
+                    <MenuItem x:Name="Menu_Image_Mode_IHC" 
+                              Uid="2"
+                              IsCheckable="True" 
+                              Click="MenuItemRenderMode_Click" 
+                              IsChecked="{c:Binding ElementName=channelSelector, Path='RenderMode == 2'}"
+                              Header="Pseudo IHC"></MenuItem>
+                    <MenuItem x:Name="Menu_Image_Mode_Pseudo_Staining" 
+                              Uid="3"
+                              IsCheckable="True" 
+                              Click="MenuItemRenderMode_Click" 
+                              IsChecked="{c:Binding ElementName=channelSelector, Path='RenderMode == 3'}"
+                              Header="Pseudo Staining"></MenuItem>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="3D Viewer" IsCheckable="True" IsChecked="{Binding ElementName=manual3DViewer, Path=IsChecked, Mode=TwoWay}" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}"></MenuItem>
+                
+            </MenuItem>
+            <MenuItem Header="Tools" FontSize="14" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}">
+                <MenuItem Header="AI Analysis" Click="MultipleImageAIAnnotationButtonClick"/>
+                <MenuItem Header="Expression" Click="StatisticDataButtonClick"/>
+                <MenuItem x:Name="PluginFunctions" Header="Plugin">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Window" FontSize="14">
+                <MenuItem Header="Minimize Window" Click="MinimizeMenuItem_Click"></MenuItem>
+                <MenuItem Header="Scale Window" Click="ScaleMenuItem_Click"></MenuItem>
+                <MenuItem Header="Maximize Window" Click="MaximizeMenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help" FontSize="14">
+                <MenuItem x:Name="userManual" Header="User Manual" InputGestureText="F1"/>
+                <Separator/>
+                <MenuItem x:Name="MetaLiteServerCheckbox" Header="Activate MetaLite Analyzer" IsChecked="False" Click="ReloadMetaLiteServer_Click"/>
+                <MenuItem x:Name="CustomizeAIModel" Header="Customize AI Model" Click="CustomizeAIModel_Click"/>
+                <Separator/>
+                <MenuItem x:Name="aboutUs" Header="About JelloX MetaLite" Click="aboutUs_Click"/>
+                
+            </MenuItem>
+            
+            
+        </Menu>
+        <Grid Grid.Row="2" Grid.Column="0" >
+            
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Margin="5,15,5,0" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}" Opacity="{Binding ElementName=scrollViewer, Path=Opacity}">
+                
+                
+                <StackPanel Orientation="Vertical">
+                    <RadioButton VerticalAlignment="Top" GroupName="edit" Content="" 
+                        x:Name="manualDrawingButton"
+                        ToolTip="Draw"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding Drawing, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        Checked="Manual_DrawingButtonClick"
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        />
+                    <RadioButton VerticalAlignment="Top" GroupName="edit" Content="" 
+                        x:Name="manualErasingButton"
+                        ToolTip="Erase"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding Erasing, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        Checked="Manual_ErasingButtonClick"
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        />
+                    <RadioButton VerticalAlignment="Top" GroupName="edit" Content="" 
+                        x:Name="manualPolygonButton"
+                        ToolTip="Polygon tool"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding Polying, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        Checked="Manual_PolygonButtonClick"
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        />
+                    <RadioButton VerticalAlignment="Top" GroupName="edit" Content="" 
+                        x:Name="manualRectangle"
+                        ToolTip="Snapshot"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding Rectangle, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        Checked="Manual_RectangleButtonClick"
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        />
+                    <RadioButton VerticalAlignment="Top" GroupName="edit" Content="" 
+                        x:Name="manualFillButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding Filling, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        Checked="Manual_FillButtonClick"
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        Visibility="Collapsed"
+                        />
+                </StackPanel>
+                <Separator Margin="2" Opacity="0.5"/>
+                            
+                <Border Padding="3">
+                    <Button Click="MultipleImageAIAnnotationButtonClick" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                            Content="🧠" FontSize="18" FontFamily="Segoe UI Emoji" Foreground="#EEEEEE" ToolTip="AI analysis">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border Padding="3">
+                    <Button Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Click="PluginFunctionButtonClick" Uid="Cell Counting.json"
+                            Content="🌕" FontSize="17" FontFamily="Segoe UI Emoji" Foreground="#EEEEEE" ToolTip="Cell counting">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border Padding="3">
+                    <Button Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Click="StatisticDataButtonClick"
+                            Content="" FontSize="20" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE" ToolTip="Expression">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <!--<Border Padding="3">
+                    <Button Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Click="PluginFunctionButtonClick"
+                            Content="" FontSize="20" FontFamily="Segoe MDL2 Assets" Foreground="#FFaaaa" ToolTip="Statistics">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>-->
+                <Border Padding="3">
+                    <Button Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Click="ExportReportButtonClick"
+                            Content="" FontSize="20" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE" ToolTip="Export report">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Separator Margin="2" Opacity="0.5"/>
+                
+                <RadioButton VerticalAlignment="Top" GroupName="3Dview" Content="" 
+                        x:Name="manual3DViewer"
+                        ToolTip="3D viewer"
+                        FontFamily="Segoe MDL2 Assets"
+                        IsChecked="{Binding _3DViewering, Mode=TwoWay}" 
+                        Style="{StaticResource MainFunctionButton}"
+                        
+                        PreviewMouseLeftButtonDown="RadioButton_Click"
+                        Click="RadioButton_Click"
+                        />
+                <Border>
+                    <!--<Button Click="Button_Click">
+
+                    </Button>-->
+                </Border>
+        </StackPanel>
+        <Grid Grid.Row="3" Margin="15,20,15,0" Grid.Column="1">
+                <!--<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="19.5"/>
+                    <ColumnDefinition Width="11.74"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="209*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkGray" Margin="5" BorderThickness="1" Grid.ColumnSpan="2">
+                    <Grid Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Background="Red"></Grid>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="DarkGray" Margin="5" BorderThickness="1" Grid.ColumnSpan="2">
+                    <Grid Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Background="Green"></Grid>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="DarkGray" Margin="5" BorderThickness="1" Grid.ColumnSpan="2">
+                    <Grid Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Background="Blue"></Grid>
+                </Border>
+
+                <ComboBox x:Name="RedComboBox" Grid.Row="0" Grid.Column="2" Margin="5" Grid.ColumnSpan="2">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Nuclear" IsSelected="True"/>
+                    <ComboBoxItem Content="Antibody"/>
+                    <ComboBoxItem Content="Membrane"/>
+                </ComboBox>
+
+
+                <ComboBox x:Name="GreenComboBox" Grid.Row="1" Grid.Column="2" Margin="5" Grid.ColumnSpan="2">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Nuclear"/>
+                    <ComboBoxItem Content="Antibody" IsSelected="True"/>
+                    <ComboBoxItem Content="Membrane"/>
+                </ComboBox>
+
+
+                <ComboBox x:Name="BlueComboBox" Grid.Row="2" Grid.Column="2" Margin="5" Grid.ColumnSpan="2">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Nuclear"/>
+                    <ComboBoxItem Content="Antibody"/>
+                    <ComboBoxItem Content="Membrane" IsSelected="True"/>
+                </ComboBox>-->
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+
+            <Border x:Name="snapshotGrid" Grid.Row="0" BorderBrush="DimGray" BorderThickness="1" Margin="0,15,0,5" Background="Black">
+                <Grid>
+                    <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" 
+                                      
+                                    RenderOptions.EdgeMode="Aliased"
+                                    RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                  MinHeight="100"
+                                  MinWidth="100"
+                            IsEnabled="False"
+                            Opacity="0.65"
+                            Loaded="scrollViewer_Loaded"
+                            SizeChanged="scrollViewer_SizeChanged"
+                            MouseMove="ScrollViewer_MouseMove"
+                            ScrollChanged="scrollViewer_ScrollChanged"
+                            MouseRightButtonDown="ScrollViewer_MouseRightButtonDown"
+                            MouseRightButtonUp="ScrollViewer_MouseRightButtonUp" 
+                            PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" 
+                                  >
+                        <Grid x:Name="scrollViewerGrid" MaxHeight="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ScrollViewer}},Path=ActualHeight}"
+                        MaxWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ScrollViewer}},Path=ActualWidth}">
+                            <Grid.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="scaleTransform"/>
+                                </TransformGroup>
+                            </Grid.LayoutTransform>
+
+                            <Image x:Name="mainViewer" RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                   MouseLeftButtonUp="MainCanvas_MouseLeftButtonUp" 
+                                PreviewMouseLeftButtonDown="MainCanvas_PreviewMouseLeftButtonDown"
+                                SizeChanged="MainCanvas_SizeChanged"
+                                MouseMove="MainCanvas_MouseMove"
+                                    Visibility="Visible">
+                                <i:Interaction.Behaviors>
+                                    <local:MouseBehaviour x:Name="MousePos"
+                                        MouseX="{Binding PanelX, Source={StaticResource sl}, Mode=OneWayToSource}"
+                                        MouseY="{Binding PanelY, Source={StaticResource sl}, Mode=OneWayToSource}" 
+                                    />
+                                </i:Interaction.Behaviors>
+                            </Image>
+
+
+
+                            <WebView:WebView x:Name="NewsContent" Loaded="NewsContent_Loaded">
+
+                            </WebView:WebView>
+
+
+                        </Grid>
+
+                    </ScrollViewer>
+                    <Image x:Name="HugeImageShower"
+                                    Cursor="{Binding ElementName=mainCanvas, Path=Cursor}"
+                                    Height="{Binding ElementName=scrollViewer,Path=ActualHeight}"
+                                    Width="{Binding ElementName=scrollViewer,Path=ActualWidth}"
+                                    RenderOptions.BitmapScalingMode="Unspecified"
+                                    RenderOptions.EdgeMode="Aliased"
+                                    IsHitTestVisible="False"
+                                    Effect="{Binding ElementName=scrollViewer, Path=Effect}"
+                                    Opacity="{Binding ElementName=scrollViewer, Path=Opacity}"
+                                    Visibility="Visible">
+
+
+                    </Image>
+                    <Canvas x:Name="ContourShower"
+                                    Cursor="{Binding ElementName=mainCanvas, Path=Cursor}"
+                                    Height="{Binding ElementName=scrollViewer,Path=ActualHeight}"
+                                    Width="{Binding ElementName=scrollViewer,Path=ActualWidth}"
+                                    RenderOptions.BitmapScalingMode="Fant"
+                                    RenderOptions.EdgeMode="Aliased"
+                                IsHitTestVisible="False"
+                                    Visibility="Visible">
+
+                    </Canvas>
+                    <ScrollViewer x:Name="UIViewer"
+                        HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" 
+                        RenderOptions.EdgeMode="Aliased"
+                        RenderOptions.BitmapScalingMode="NearestNeighbor"                                  
+                        IsHitTestVisible="False"
+                        Height="{Binding ElementName=scrollViewer,Path=Height}"
+                        Width="{Binding ElementName=scrollViewer,Path=Width}"
+                                  >
+                        <Grid Width="{Binding ElementName=scrollViewerGrid, Path=Width}"
+                              Height="{Binding ElementName=scrollViewerGrid, Path=Height}"
+                              LayoutTransform="{Binding ElementName=scrollViewerGrid, Path=LayoutTransform}"
+                              
+                              >
+                            <Canvas x:Name="mainCanvas" Background="Transparent"
+                                    
+                                    Margin="{Binding ElementName=mainViewer,Path=Margin}" 
+                                Height="{Binding ElementName=mainViewer,Path=ActualHeight}"
+                                Width="{Binding ElementName=mainViewer,Path=ActualWidth}"
+                                
+                                >
+
+
+                            </Canvas>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 0 5 10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#AA000000" IsHitTestVisible="False" Visibility="{Binding ElementName=scrollViewer, Path=IsEnabled, Converter={StaticResource BoolToVis}}">
+                <TextBlock x:Name="Coordinate_X" Margin="3 0 0 0" Foreground="#DDDDDD" Text="{Binding PanelX, Source={StaticResource sl}, StringFormat='{}{0:N0}'}"></TextBlock>
+                <TextBlock Foreground="#DDDDDD" Text=" , "></TextBlock>
+                <TextBlock x:Name="Coordinate_Y" Margin="0 0 3 0" Foreground="#DDDDDD" Text="{Binding PanelY, Source={StaticResource sl}, StringFormat='{}{0:N0}'}"></TextBlock>
+            </StackPanel>
+            <Grid Grid.Row="0" Margin="0,0,0,5" VerticalAlignment="Bottom" IsHitTestVisible="False">
+                <ProgressBar x:Name="statusProgressBar" Height="20" Value="50" Background="#b2000000" BorderBrush="#22FFFFFF" Visibility="Visible">
+                    <ProgressBar.Foreground>
+                        <LinearGradientBrush StartPoint="0.0,0.5" EndPoint="1.0,0.5">
+                            <GradientStop Color="#119911" Offset="0.0" />
+                            <GradientStop x:Name="gradientStopA2" Color="#88CC55" Offset="0.5" />
+                            <GradientStop Color="#119911" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </ProgressBar.Foreground>
+                    <ProgressBar.Triggers>
+                        <EventTrigger RoutedEvent="ProgressBar.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="gradientStopA2"
+                                        Storyboard.TargetProperty="Offset"
+                                        RepeatBehavior="Forever"
+                                        BeginTime="0:0:0.0"
+                                        FillBehavior="Stop"
+                                        DecelerationRatio="1.0"
+                                        From="0.0" To="1.0" Duration="0:0:3" />
+                                    <ColorAnimation
+                                        Storyboard.TargetName="gradientStopA2"
+                                        Storyboard.TargetProperty="Color"
+                                        RepeatBehavior="Forever"
+                                        BeginTime="0:0:0"
+                                        FillBehavior="Stop"
+                                        DecelerationRatio="1"
+                                        From="#88CC55" To="#88CC55" Duration="0:0:2" />
+                                    <ColorAnimation
+                                        Storyboard.TargetName="gradientStopA2"
+                                        Storyboard.TargetProperty="Color"
+                                        RepeatBehavior="Forever"
+                                        BeginTime="0:0:0"
+                                        FillBehavior="Stop"
+                                        DecelerationRatio="0.1"
+                                        From="#88CC55" To="#119911" Duration="0:0:3" />    
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ProgressBar.Triggers>
+                    <!--Setting Collapsed at initial UI render-->
+                </ProgressBar>
+                <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" x:Name="progressBarText" Margin="0,0,2,-9" Foreground="#DDDDDD" Height="20" TextAlignment="Right" Visibility="{Binding ElementName=statusProgressBar, Path=Visibility}">Initializing...</TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="percentageText" Margin="2,0,0,-9" Foreground="#DDDDDD" Height="20" TextAlignment="Left" Visibility="{Binding ElementName=statusProgressBar, Path=Visibility}" Text="{Binding ElementName=statusProgressBar, Path=Value, StringFormat={}{0:0}%}"></TextBlock>
+                </Grid>
+            </Grid>
+            <Button HorizontalAlignment="Right" 
+                    Click="CloseImageButton_Click"
+                    Margin="0, 17, 2, 0" 
+                    VerticalAlignment="Top" 
+                    Content="" 
+                    FontSize="6" 
+                    FontFamily="Segoe MDL2 Assets" 
+                    BorderBrush="#88000000" 
+                    Foreground="#eee" 
+                    Background="#444444"
+                    IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}"
+                    Visibility="{Binding ElementName=scrollViewer, Path=IsEnabled, Converter={StaticResource BoolToVis}}"
+                    >
+                
+            </Button>
+        </Grid>
+        <Grid Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right" Background="#444444" Margin="0, 15, 5, 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Margin="0,0,0,0" Click="RightPanelHidden_Click"
+                    
+                    x:Name="RightPanelHidden"
+                           ToolTip="Hide panel">
+                <Button.RenderTransform>
+                    <RotateTransform x:Name="MyAnimatedTransform_" Angle="0" />
+                </Button.RenderTransform>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                Storyboard.TargetName="MyAnimatedTransform"
+                Storyboard.TargetProperty="(RotateTransform.Angle)"
+                From="0.0" To="180" Duration="0:0:0.25" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    
+                </Button.Triggers>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" x:Name="RPHB" BorderThickness="0" CornerRadius="0" Background="#444444">
+
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="RPHB" Value="#777"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBlock x:Name="RightPanelHidden_Text" Grid.Column="0" Text="" RenderTransformOrigin="0.5,0.5" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" 
+                       IsHitTestVisible="False"
+                       Foreground="#cccccc">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="MyAnimatedTransform" Angle="0" />
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TabControl x:Name="rightPanel" Grid.Column="1" MaxWidth="305">
+                <TabControl.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabControl.Background>
+                <TabControl.LayoutTransform>
+                    <ScaleTransform x:Name="rightPanelTransform"
+                        CenterX="0" CenterY="0"
+                        ScaleX="1"
+                        ScaleY="1"
+                    />
+                </TabControl.LayoutTransform>
+                <TabItem x:Name="ImagePanel" Header="View panel" Foreground="#EEEEEE">
+                    <Grid x:Name="ImagePanelGrid">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="257*"/>
+                            <RowDefinition Height="21*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" x:Name="wholeImageWrapper" Margin="0, 0, 0, 5">
+                            <Grid Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="top">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+
+                                <Border Grid.Column="0" BorderBrush="DimGray" Height="275" Width="275" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="Black">
+                                    <Image x:Name="wholeImageViewer" RenderOptions.BitmapScalingMode="HighQuality" Stretch="Fill" MouseRightButtonDown="WholeImageViewer_RightButtonDown" MouseWheel="wholeImageViewer_MouseWheel" MouseRightButtonUp="WholeImageViewer_RightButtonUp" MouseMove="WholeImageViewer_MouseMove"/>
+
+                                </Border>
+                                <StackPanel Grid.Column="0" Orientation="Vertical" Height="22" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <Border Grid.Column="0" Height="22" RenderTransformOrigin="0.5,0.5" Margin="-3,0,-3,0">
+                                            <Border.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform ScaleX="0.8"/>
+                                                    <SkewTransform/>
+                                                    <RotateTransform/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Border.RenderTransform>
+                                            <TextBox x:Name="ZoomTextBox" BorderThickness="0" TextAlignment="Right" FontSize="15" HorizontalAlignment="Stretch" IsHitTestVisible="False" Text="1" TextChanged="ZoomTextBox_TextChanged" PreviewTextInput="ZoomTextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"
+                                 Padding="0,0,0,0" Background="#00000000" Foreground="#EEEEEE"
+                                 ></TextBox>
+                                        </Border>
+                                        <Border Grid.Column="1" Height="22">
+                                            <TextBox BorderThickness="0" TextAlignment="Left" FontSize="15" Width="12" Text="x" IsHitTestVisible="False" TextChanged="ZoomTextBox_TextChanged" PreviewTextInput="ZoomTextBox_PreviewTextInput" InputMethod.IsInputMethodEnabled="False"
+                                 Padding="-1,0,0,0" IsReadOnly="True" Background="#00000000" Foreground="#EEEEEE"
+                                 ></TextBox>
+                                        </Border>
+
+                                        <Grid Grid.Column="2" VerticalAlignment="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Border Grid.Row="0" Height="11" Width="15">
+                                                <Button PreviewMouseLeftButtonDown="ZoomIncreaseButtonDown"
+                                        PreviewMouseLeftButtonUp="ZoomIncreaseButtonUp"
+                                    Content="" FontSize="8" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE">
+                                                    <Button.Template>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="0" Background="#666666">
+                                                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Button.Template>
+                                                </Button>
+                                            </Border>
+                                            <Border Grid.Row="1" Height="11" Width="15">
+                                                <Button PreviewMouseLeftButtonDown="ZoomDecreaseButtonDown"
+                                        PreviewMouseLeftButtonUp="ZoomDecreaseButtonUp"
+                                    Content="" FontSize="8" FontFamily="Segoe MDL2 Assets" Foreground="#EEEEEE">
+                                                    <Button.Template>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="0" Background="#666666">
+                                                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Button.Template>
+                                                </Button>
+                                            </Border>
+                                        </Grid>
+
+
+                                    </Grid>
+                                </StackPanel>
+                                <Grid Grid.Column="1"  Width="20" Margin="0,0,0,0" HorizontalAlignment="Right" MouseLeave="StackPanel_MouseLeave">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Height="250" Width="30" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="-25,0,0,0"/>
+                                    <Slider Grid.Column="1" x:Name="WholeImageSlider" Orientation="Vertical" Value="1" Minimum="1" Maximum="40" ValueChanged="WholeImageSlider_ValueChanged" 
+                                            Style="{DynamicResource ScaleStyle}"
+                                    MouseEnter="StackPanel_MouseEnter" 
+                                    Margin="0,0,0,0"></Slider>
+
+                                    <Grid Grid.Column="0" x:Name="WholeImageScalers" Height="220" Width="30" Margin="-30,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Collapsed">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="4" Height="22" Background="#555555">
+                                            <Button Click="ZoomX2ButtonClick"
+                            Content="2x" Foreground="#EEEEEE" Background="#666666">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Border>
+                                        <Border Grid.Row="3" Height="22" Background="#555555">
+                                            <Button Click="ZoomX4ButtonClick"
+                            Content="4x" Foreground="#EEEEEE" Background="#666666">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Border>
+                                        <Border Grid.Row="2" Height="22" Background="#555555">
+                                            <Button Click="ZoomX10ButtonClick"
+                            Content="10x" Foreground="#EEEEEE" Background="#666666">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Border>
+                                        <Border Grid.Row="1" Height="22" Background="#555555">
+                                            <Button Click="ZoomX20ButtonClick"
+                            Content="20x" Foreground="#EEEEEE" Background="#666666">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Border>
+                                        <Border Grid.Row="0" Height="22" Background="#555555">
+                                            <Button Click="ZoomX40ButtonClick"
+                            Content="40x" Foreground="#EEEEEE" Background="#666666">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="{x:Type Button}">
+                                                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="0" Background="#00000000">
+
+                                                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+
+
+                            </Grid>
+
+                        </Grid>
+                        <TabControl Grid.Row="1" x:Name="tabPage" Margin="0,0,0,0" Grid.RowSpan="2">
+                            <TabItem Header="Layer" Foreground="#EEEEEE">
+                                <Grid x:Name="annotationSelectorGrid" Margin="0,0,0,0" IsEnabled="{Binding ElementName=scrollViewer, Path=IsEnabled}" Opacity="{Binding ElementName=scrollViewer, Path=Opacity}">
+                                    <!--Don't delete, this gird is for the annotationSelector window embeding -->
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Channel" Foreground="#EEEEEE">
+
+                                <Grid>
+                                    <SubUnit:ChannelPanel x:Name="channelSelector">
+
+                                    </SubUnit:ChannelPanel>
+                                </Grid>
+                            </TabItem>
+
+                        </TabControl>
+
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="StatisticPanel" Header="Statistics panel" Foreground="#EEEEEE">
+                    <Grid x:Name="StatisticPanelGrid" Width="{Binding ElementName=ImagePanelGrid, Path=ActualWidth}">
+                        <SubUnit:ReportPanel x:Name="statisticPanel" >
+
+                        </SubUnit:ReportPanel>
+
+                    </Grid>
+                </TabItem>
+                
+            </TabControl>
+            
+        </Grid>
+
+        <Grid x:Name="SliderGrid" Grid.Column="2" Grid.Row="2" Margin="0,15, 0,5" Visibility="Visible" HorizontalAlignment="Right">
+            <!--Setting Collapsed at initial UI render-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Margin="2 0 2 0">
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 0">
+                    <TextBlock Margin="0 0 3 0" MinWidth="20" Cursor="IBeam" TextAlignment="Right" Text="{Binding ElementName=ImagePickerSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="#eeeeee"/>
+                    <TextBlock Foreground="#eeeeee" TextAlignment="Center" Margin="0 -1.5 0 0">
+                    |
+                    </TextBlock>
+                    <TextBlock x:Name="PicNumberLabel" MinWidth="20" Margin="3 0 0 0" Foreground="#eeeeee" TextAlignment="Left" >
+                    X
+                    </TextBlock>
+                </StackPanel>
+                <Border Background="#AA666666" CornerRadius="5" x:Name="DepthTextBoxBorder" Margin="0 0 0 0" PreviewMouseDown="DepthTextBox_PreviewMouseLeftButtonDown">
+                    
+                    <TextBox x:Name="DepthTextBox" 
+                             Text="{Binding ElementName=ImagePickerSlider, Path=Value, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" 
+                             PreviewTextInput="DepthTextBox_PreviewTextInput"
+                             
+                             PreviewKeyDown="DepthTextBox_KeyDown"
+                             LostFocus="DepthTextBox_LostFocus"
+                             Opacity="0.0"
+                             TextAlignment="Center"
+                             input:InputMethod.IsInputMethodEnabled="False">
+                        <TextBox.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="DepthTextBox"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="0.0" To="1.0" Duration="0:0:0.25"
+                                            >
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="DepthTextBox"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1.0" To="0.0" Duration="0:0:0.25"
+                                            >
+
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </TextBox.Triggers>
+                    </TextBox>
+                </Border>
+                
+            </Grid>
+            <Slider Grid.Row="1" x:Name="ImagePickerSlider" IsSnapToTickEnabled="True" TickPlacement="TopLeft" Width="30" Orientation="Vertical" Value="1" Style="{DynamicResource SliderStyle}"
+                    ValueChanged="ImagePickerSlider_ValueChanged" Minimum="1"  AutoToolTipPlacement="BottomRight"
+                    LargeChange="1"
+                    Delay="0"
+                    SmallChange="1"
+                    MouseWheel="ImagePickerSlider_MouseWheel"
+                    >
+                </Slider>
+            
+        </Grid>
+
+        <Border Height="auto" Grid.Row="3" Grid.ColumnSpan="4" BorderBrush="White" BorderThickness="0,0,0,0" Padding="3,3,3,3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="307*"/>
+                    <ColumnDefinition Width="43*"/>
+                    <ColumnDefinition Width="28*"/>
+                    <ColumnDefinition Width="273*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="233*"/>
+                    <ColumnDefinition Width="233*"/>
+                    <ColumnDefinition Width="233*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Padding="0,0,20,0" Grid.Row="0" Grid.Column="2" x:Name="aiCalculationTimeTextBlock" Foreground="White" FontSize="12" VerticalAlignment="Center" TextAlignment="Right" Margin="0,0,0,2" Grid.ColumnSpan="3" Visibility="Hidden"></TextBlock>
+                <TextBlock Padding="0,0,20,0" Grid.Row="0" Grid.Column="5" x:Name="statisticDataTextBlock" Foreground="White" FontSize="12" VerticalAlignment="Center" TextAlignment="Right" Margin="0,0,0,2"></TextBlock>
+                <TextBlock Padding="0,0,20,0" Grid.Row="0" Grid.Column="7" x:Name="statusTextBlock" Foreground="White" FontSize="12" VerticalAlignment="Center" TextAlignment="Right" Margin="0,1"></TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>OpenSlideNET.Interop</PackageId>
+    <Title>OpenSlideNET.Interop</Title>
+    <Version>$(InteropPackageVersion)</Version>
+    <Description>Cross-platform interop helper for OpenSlideNET package.</Description>
+    <TargetFrameworks>net472;</TargetFrameworks>
+    <RuntimeIdentifiers>win;</RuntimeIdentifiers>
+    <ExtrasBuildEachRuntimeIdentifier Condition="'$(TargetFramework)' != 'net472'">true</ExtrasBuildEachRuntimeIdentifier>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <NoWarn>$(NoWarn);NU5131</NoWarn>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.1'">
+    <PackageReference Include="System.Memory" Version="$(SystemMemoryPackageVersion)" />
+  </ItemGroup>
+  
+  <ItemGroup>
+   <ReferenceAssemblyProjectReference Include="..\..\ref\OpenSlideNET.Interop\OpenSlideNET.Interop.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+  </ItemGroup>
+</Project>

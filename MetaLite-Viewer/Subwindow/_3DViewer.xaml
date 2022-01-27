@@ -1,0 +1,23 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow._3DViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+        xmlns:JelloX3D="clr-namespace:JelloX3D;assembly=JelloX3D"      
+        mc:Ignorable="d"
+        Closed="Window_Closed"
+        Title="3D Viewer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Setting">
+                <MenuItem Header="Voxel Setting" Click="VoxelSetting_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="body" Grid.Row="1"></Grid>
+    </Grid>
+</Window>

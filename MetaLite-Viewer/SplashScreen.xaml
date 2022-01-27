@@ -1,0 +1,50 @@
+﻿<Window x:Class="MetaLite_Viewer.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetaLite_Viewer"
+        mc:Ignorable="d"
+        Title="SplashScreen" 
+        Height="600" Width="1000" 
+        ResizeMode="NoResize" 
+        WindowStyle="None" 
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen" 
+        Background="#FF03112A" BorderThickness="16 0 16 0" BorderBrush="#FF193B5D">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#FF29879E"></Setter>
+            <Setter Property="FontFamily" Value="Yu Gothic UI"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Image Grid.Column="0" Source="image/board.png" Stretch="UniformToFill"></Image>
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20">
+            <Image Source="image/logo_transparent.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="60" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+            <Label x:Name="lable" Content="JelloX Biotect Inc." FontSize="14" Foreground="#FF3D9CBF" Margin="0 0 0 0" FontFamily="Yu Gothic UI"></Label>
+            <Label Content="MetaLite" Foreground="#FF39AAD6" FontSize="28" Margin="0 -15 0 0" FontFamily="Yu Gothic UI Semibold"></Label>
+            <Label x:Name="version" Content="Version: v1.0.0" Foreground="#FF29879E" FontSize="14" FontFamily="Yu Gothic UI" Margin="0 -15 0 0" ></Label>
+            <Separator Background="#FF1E6070" ></Separator>
+            <Label Content="System check" FontSize="18" FontFamily="Yu Gothic UI Semibold" Foreground="#FF29879E"></Label>
+            <StackPanel Orientation="Horizontal" Margin="0 -5 0 0">
+                <Label x:Name="RamCheck" Content="Available RAM: GB"></Label>
+                <Label x:Name="RamCheckState" Foreground="#FF91ADBD" Content="-"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 -10 0 0">
+                <Label x:Name="ServerCheck" Content="Launch server:"/>
+                <Label x:Name="ServerCheckState" Foreground="#FF91ADBD" Content="0/20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 -10 0 0">
+                <Label x:Name="VersionCheck" Content="Version Check:"></Label>
+                <Label x:Name="VersionCheckState" Foreground="#FF91ADBD" Content="latest v0.1.0"></Label>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+{
+  "FunctionName": "ParallelStatistic",
+  "PostUri": "/jellox/ki67_percentage_test",
+  "IsSendImage": true,
+  "IsSendMask": true,
+  "Content": [
+    {
+      "parameterType": "ComboBox",
+      "title": "Channel Select",
+      "parameterName": "ChannelSelect",
+      "datas": [
+        {
+          "varName": "red_channel",
+          "value": "Nuclear"
+        },
+        {
+          "varName": "green_channel",
+          "value": "Antibody"
+        },
+        {
+          "varName": "blue_channel",
+          "value": "Membrane"
+        }
+      ],
+      "items": [ "", "Nuclear", "Antibody", "Membrane" ]
+    },
+    {
+      "parameterType": "ComboBox",
+      "title": "Apparent magnification",
+      "parameterName": "ApparentMagnification",
+      "datas": [
+        {
+          "varName": "ApparentMagnification",
+          "value": "20x"
+        }
+      ],
+      "items": [ "20x", "40x" ]
+    },
+    {
+      "parameterType": "RangeInt32",
+      "title": "Cell size range",
+      "parameterName": "CellRange",
+      "auto": true,
+      "Range": {
+        "Min": "0",
+        "Max": "1000",
+        "From": "10",
+        "To": "40"
+      }
+    },
+    {
+      "parameterType": "SliderInt32",
+      "title": "Threshold",
+      "parameterName": "Threshold",
+      "auto": true,
+      "Range": {
+        "Min": "0",
+        "Max": "255",
+        "From": "127"
+      }
+
+    }
+  ]
+}

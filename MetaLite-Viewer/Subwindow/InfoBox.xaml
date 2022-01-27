@@ -1,0 +1,38 @@
+﻿<Window x:Class="MetaLite_Viewer.Subwindow.InfoBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetaLite_Viewer.Subwindow"
+        mc:Ignorable="d"
+        Title="MessageBox" 
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="100"
+        MinWidth="400"
+        Background="#44464C">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#eeeef0"></Setter>
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Background" Value="#64666C"></Setter>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#EEEEEE"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel x:Name="TextContent" Orientation="Horizontal" MinHeight="100">
+
+            </StackPanel>            
+            <StackPanel x:Name="ButtonPanel" Orientation="Horizontal" HorizontalAlignment="Right">
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

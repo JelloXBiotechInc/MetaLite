@@ -1,0 +1,50 @@
+{
+  "FunctionName": "Cell Counting",
+  "PostUri": "/jellox/cell_counting",
+  "IsSendImage": false,
+  "IsSendMask": true,
+  "Content": [
+    {
+      "parameterType": "ComboBox",
+      "title": "Channel select",
+      "parameterName": "ChannelSelect",
+      "datas": [
+        {
+          "varName": "CellChannel",
+          "value": "Green"
+        }
+      ],
+      "items": [ "Red", "Green", "Blue" ]
+    },
+    {
+      "parameterType": "ComboBox",
+      "title": "Apparent magnification",
+      "parameterName": "ApparentMagnification",
+      "datas": [
+        {
+          "varName": "ApparentMagnification",
+          "value": "20x"
+        }
+      ],
+      "items": [ "20x", "40x" ]
+    },
+    {
+      "parameterType": "RangeInt32",
+      "title": "Size range",
+      "parameterName": "CellRange",
+      "auto": true,
+      "Range": {
+        "Min": "0",
+        "Max": "1000",
+        "From": "10",
+        "To": "40"
+      }
+    },
+    {
+      "parameterType": "Boolean",
+      "title": "Acceleration",
+      "parameterName": "Acceleration",
+      "boolean": false
+    }
+  ]
+}

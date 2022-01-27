@@ -1,0 +1,29 @@
+{
+  "FunctionName": "Test",
+  "PostUri": "/jellox/test",
+  "IsSendImage": true,
+  "IsSendMask": false,
+  "Content": [
+    {
+      "parameterType": "ComboBox",
+      "title": "Channel Select",
+      "parameterName": "ChannelSelect",
+      "datas": [
+        {
+          "varName": "red_channel",
+          "value": "Membrane"
+        },
+        {
+          "varName": "green_channel",
+          "value": "Antibody"
+        },
+        {
+          "varName": "blue_channel",
+          "value": "Nuclear"
+        }
+      ],
+      "items": [ "", "Membrane", "Antibody", "Nuclear" ]
+    }
+    
+  ]
+}

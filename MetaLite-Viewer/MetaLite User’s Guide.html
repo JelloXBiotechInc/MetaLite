@@ -1,0 +1,1899 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0075)https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#MetaLite-User%E2%80%99s-Guide -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:image" content="https://hackmd.io/favicon.png">
+<meta property="fb:app_id" content="1436904003272070">
+
+<meta name="realtime-register-serverurl" content="https://hackmd.io/realtime-reg">
+
+<meta name="csrf-token" content="NDOwJuQS-X28iulmcOq8leDxUz0hT8arbrEA">
+<title>MetaLite User’s Guide - HackMD</title>
+<link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+<link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+<script src="./MetaLite User’s Guide_files/cb=gapi.loaded_1" nonce="" async=""></script><script src="./MetaLite User’s Guide_files/cb=gapi(1).loaded_0" nonce="" async=""></script><script src="./MetaLite User’s Guide_files/rules-p-GpPtabXgUQ99B.js" async=""></script><script type="text/javascript" async="" src="./MetaLite User’s Guide_files/quant.js" nonce=""></script><script type="text/javascript" async="" src="./MetaLite User’s Guide_files/analytics.js" nonce=""></script><script async="" src="./MetaLite User’s Guide_files/gtm.js"></script><script nonce="">
+window.domain = 'hackmd.io'
+window.urlpath = ''
+window.debug = false
+window.version = '1.3.0'
+window.brand = 'HackMD'
+
+
+
+window.GOOGLE_API_KEY = 'AIzaSyCjSrqWHhmWJnoI7JlD88XDSaBgiKbaenA'
+window.GOOGLE_CLIENT_ID = '911617723593-drikdibvvn63slfd6kbqigo8ql1no55s.apps.googleusercontent.com'
+window.DROPBOX_APP_KEY = 'rdoizrlnkuha23r'
+
+window.PLANTUML_SERVER = 'https://ptuml.hackmd.io'
+
+window.ASSET_URL = 'https://assets.hackmd.io'
+
+window.USER_CAN_CREATE_TEAM = true
+window.USER_CAN_DELETE_ACCOUNT = true
+window.USER_DELETE_ACCOUNT_VIA_EMAIL = true
+window.PAYMENT_ENABLED = true
+window.GITHUB_SYNC_ENABLED = true
+window.FREE_TEAM_NUM = 3
+window.FREE_TEAM_MEMBER_NUM = 3
+window.FREE_PUBLIC_TEAM_NUM = 10
+
+window.EE_SITE_ENABLE = false
+window.EE_SITE_NAME = 'false'
+window.EE_SITE_LINK = 'false'
+
+window.ALLOW_ANONYMOUS = true
+window.PUBLIC_OVERVIEW = false
+window.INTERNAL_PUBLIC_OVERVIEW = false
+
+
+
+
+
+
+window.SHOW_OVERVIEW = true
+
+
+window.USE_CDN = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.canEdit = true
+
+
+
+
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script nonce="">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KLW9Z3');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<link rel="stylesheet" href="./MetaLite User’s Guide_files/emojify.min.css">
+ <link href="./MetaLite User’s Guide_files/font-vendor.b86e2bf451b246b1a88e.css" rel="stylesheet"><link href="./MetaLite User’s Guide_files/common-vendor.b8ecfc406ac0b5f77a26.css" rel="stylesheet"><link href="./MetaLite User’s Guide_files/index-vendor.8a602875f0438be6661b.css" rel="stylesheet"><link href="./MetaLite User’s Guide_files/index.b7f272918f6892867a56.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+
+<style>::-moz-focus-inner{border:0 !important;}:focus,.focus{outline: none !important;}</style><style type="text/css"></style><style></style><style></style><link rel="stylesheet" type="text/css" href="./MetaLite User’s Guide_files/fretboard.f32f2a8d5293869f0195.css"><script charset="utf-8" src="./MetaLite User’s Guide_files/fretboard.96eb64772ce93dae0d18.js"></script><style nonce="">.picker-dialog-frame{width:100%;height:100%;border:0;overflow:hidden}.picker-dialog-bg{z-index:1000}.picker-dialog,.picker-dialog-bg{position:absolute;top:0;left:0;background-color:#fff}.picker-dialog{border:1px solid #acacac;width:auto;padding:0;z-index:1001;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}.picker-dialog-content{font-size:0;padding:0}.picker-dialog-buttons,.picker-dialog-title{display:none}</style><style type="text/css">  @-webkit-keyframes rotate {
+    from  { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes rotate {
+    from  { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+    .dropbox-dropin-btn, .dropbox-dropin-btn:link, .dropbox-dropin-btn:hover {
+      display: inline-block;
+      height: 14px;
+      font-family: "Lucida Grande", "Segoe UI", "Tahoma", "Helvetica Neue", "Helvetica", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #636363;
+      text-decoration: none;
+      padding: 1px 7px 5px 3px;
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      border-bottom-color: #d4d4d4;
+        background: #fcfcfc;
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fcfcfc 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:hover, .dropbox-dropin-error:hover {
+      border-color: #dedede;
+      border-bottom-color: #cacaca;
+        background: #fdfdfd;
+  background: -moz-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fdfdfd 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:active, .dropbox-dropin-error:active {
+      border-color: #d1d1d1;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .dropbox-dropin-btn .dropin-btn-status {
+      display: inline-block;
+      width: 15px;
+      height: 14px;
+      vertical-align: bottom;
+      margin: 0 5px 0 2px;
+      background: transparent url('https://www.dropbox.com/static/images/widgets/dbx-saver-status.png') no-repeat;
+      position: relative;
+      top: 2px;
+    }
+
+    .dropbox-dropin-default .dropin-btn-status {
+      background-position: 0px 0px;
+    }
+
+    .dropbox-dropin-progress .dropin-btn-status {
+      width: 18px;
+      margin: 0 4px 0 0;
+      background: url('https://www.dropbox.com/static/images/widgets/dbx-progress.png') no-repeat center center;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1.7s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      animation-name: rotate;
+      animation-duration: 1.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .dropbox-dropin-success .dropin-btn-status {
+      background-position: -15px 0px;
+    }
+
+    .dropbox-dropin-disabled {
+      background: #e0e0e0;
+      border: 1px #dadada solid;
+      border-bottom: 1px solid #ccc;
+      box-shadow: none;
+    }
+
+    .dropbox-dropin-disabled .dropin-btn-status {
+      background-position: -30px 0px;
+    }
+
+    .dropbox-dropin-error .dropin-btn-status {
+      background-position: -45px 0px;
+    }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.4) {
+      .dropbox-dropin-btn .dropin-btn-status {
+        background-image: url('https://www.dropbox.com/static/images/widgets/dbx-saver-status-2x.png');
+        background-size: 60px 14px;
+          -webkit-background-size: 60px 14px;
+      }
+
+      .dropbox-dropin-progress .dropin-btn-status {
+        background: url('https://www.dropbox.com/static/images/widgets/dbx-progress-2x.png') no-repeat center center;
+        background-size: 20px 20px;
+          -webkit-background-size: 20px 20px;
+      }
+  }
+
+    .dropbox-saver:hover, .dropbox-chooser:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .dropbox-chooser, .dropbox-dropin-btn {
+      line-height: 11px !important;
+      text-decoration: none !important;
+      box-sizing: content-box !important;
+        -webkit-box-sizing: content-box !important;
+        -moz-box-sizing: content-box !important;
+    }
+    </style></head>
+
+<body style="background-color: white;padding-top: 0px;">
+    
+<div class="ui-spinner unselectable hidden-print" style="display: none;"><div class="spinner" role="progressbar" style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;"><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-0-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(0deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-1-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(32deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-2-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(65deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-3-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(98deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-4-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(130deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-5-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(163deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-6-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(196deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-7-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(229deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-8-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(261deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-9-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(294deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-10-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(327deg) translate(30px, 0px); border-radius: 0px;"></div></div></div></div>
+
+    <div class="row ui-content" style="">
+    <div class="ui-edit-area unselectable ui-resizable" style="display: none;">
+        <textarea id="textit" style="display: none;"></textarea><div><div class="CodeMirror cm-s-one-dark CodeMirror-wrap CodeMirror-overlayscroll" style="height: 889px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-overlayscroll-horizontal" cm-not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-overlayscroll-vertical" cm-not-content="true" style="display: block; bottom: 0px;"><div style="height: 10px; top: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1" style="height: 889px;"><div class="CodeMirror-sizer" style="margin-left: 0px; padding-right: 10px; padding-bottom: 0px;"><div style="position: relative;"><div class="CodeMirror-lines" role="presentation" style="padding-bottom: 867px;"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div class="CodeMirror-other-cursors"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 0px; top: 0px; height: 0px;">&nbsp;</div></div><div class="cursor-menu"></div><div class="CodeMirror-code" role="presentation"></div></div></div></div></div><div style="position: absolute; height: 50px; width: 1px; border-bottom: 0px solid transparent;"></div><div class="CodeMirror-gutters" style="left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div><div class="CodeMirror-gutter authorship-gutters"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div><div class="container-thin template-menu" style="display: none;">  <div class="github-signin-sync clearfix" style="display: none;">    <p class="menu-tip" data-i18n="github.sync.empty-note.sign-in-tip">登入後可從 GitHub 匯入並同步檔案：</p>    <button class="btn btn-default menu-item ui-signin" data-toggle="modal" data-target=".signin-modal"><span data-i18n="github.sync.empty-note.sign-in">註冊並登入 HackMD</span></button>  </div>  <div class="github-sync clearfix" style="">    <p class="menu-tip" data-i18n="github.sync.empty-note.sync-tip">從 GitHub 匯入並同步檔案：</p>    <button class="btn btn-default menu-item ui-github-pull"><i class="fa fa-arrow-down fa-fw" style="padding-top:4px; margin-right: 10px;"></i><span data-i18n="github.sync.pull-github">從 GitHub 拉取</span></button>    <button class="btn btn-default menu-item ui-github-push"><i class="fa fa-arrow-up fa-fw" style="padding-top:4px; margin-right: 10px;"></i><span data-i18n="github.sync.push-github">推送至 GitHub</span></button>  </div>  <p class="menu-tip" data-i18n="template.menu-tip">套用範本：</p>  <span class="ui-template-menu-list"><button class="btn btn-default menu-item" data-template="cbc6d1e3-0c5f-46e3-b93e-f6d85be3c722" data-template-type="default">Try it</button><button class="btn btn-default menu-item" data-template="0f4505d1-db3c-4abf-94ad-471a14425f26" data-template-type="default">Talk slide</button><button class="btn btn-default menu-item" data-template="f2a48ddb-2038-4222-bbc9-0db215bd6b36" data-template-type="default">Meeting minute</button></span>  <button class="btn btn-default menu-item more-template ui-more-template" tabindex="-1" data-toggle="modal" data-target="#templateModal"><span data-i18n="template.more-templates">更多範本</span>    <i class="fa fa-angle-right fa-fw pull-right" style="padding-top:4px;"></i></button></div></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; display: none;"><button class="btn btn-lg btn-default ui-sync-toggle" title="切換同步捲動" data-i18n="[title]editor.toggle-sync-scrolling" style="display: none;"><i class="fa fa-link fa-fw"></i></button></div></div>
+    <div class="ui-view-area">
+        
+        <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><p class="part" data-startline="1" data-endline="2" data-position="0" data-size="0"><img src="./MetaLite User’s Guide_files/fYxK32e.png" alt="" width="120" class="" data-position="0" data-size="42"><br>
+<span data-position="43" data-size="19">JelloX Biotech Inc.</span></p><h1 class="part" data-startline="4" data-endline="4" id="MetaLite-User’s-Guide" data-id="MetaLite-User’s-Guide"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#MetaLite-User%E2%80%99s-Guide" title="MetaLite-User’s-Guide" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="66" data-size="21">MetaLite User’s Guide</span></h1><details class="part" data-startline="7" data-endline="29" data-position="90" data-size="830"><summary>Quick start <em>(If you want to quick know how to operate MetaLite, you can unfold this section and follow the instruction below.)</em></summary>
+<h2 class="" id="Quick-start" data-id="Quick-start"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Quick-start" title="Quick-start" smoothhashscroll=""><span class="octicon octicon-link"></span></a><strong data-position="233" data-size="0"><span data-position="235" data-size="11">Quick start</span></strong></h2>
+<h3 class="" id="Open-file" data-id="Open-file"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Open-file" title="Open-file" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="254" data-size="9">Open file</span></h3>
+<p data-position="264" data-size="0"><img src="./MetaLite User’s Guide_files/Dt7RUyP.png" alt="" class="" data-position="264" data-size="36"><br>
+<img src="./MetaLite User’s Guide_files/Vt187My.png" alt="" class="" data-position="301" data-size="36"></p>
+<h3 class="" id="Change-view" data-id="Change-view"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Change-view" title="Change-view" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="342" data-size="11">Change view</span></h3>
+<table>
+<thead>
+<tr>
+<th><span data-position="355" data-size="11">Zoom in/out</span></th>
+<th><span data-position="368" data-size="9">Drag move</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./MetaLite User’s Guide_files/WnW5yii.png" alt="" class="" data-position="398" data-size="36"></td>
+<td><img src="./MetaLite User’s Guide_files/VUamFVz.png" alt="" class="" data-position="435" data-size="36"></td>
+</tr>
+</tbody>
+</table>
+<h3 class="" id="Edit-annotation" data-id="Edit-annotation"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Edit-annotation" title="Edit-annotation" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="478" data-size="15">Edit annotation</span></h3>
+<p data-position="494" data-size="0"><img src="./MetaLite User’s Guide_files/sRYD6Gp.png" alt="" class="" data-position="494" data-size="36"><br>
+<span data-position="531" data-size="4">Use </span><code data-position="538" data-size="4">Ctrl</code><span data-position="545" data-size="3"> + </span><code data-position="551" data-size="17">Mouse Left Buttom</code><span data-position="571" data-size="35"> to adjust drawing size, and press </span><code data-position="609" data-size="17">Mouse Left Buttom</code><span data-position="629" data-size="20"> to edit annotation.</span><br>
+<img src="./MetaLite User’s Guide_files/BmdP8kE.png" alt="" class="" data-position="650" data-size="36"></p>
+<h3 class="" id="AI-assisted-annotate" data-id="AI-assisted-annotate"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#AI-assisted-annotate" title="AI-assisted-annotate" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="692" data-size="20">AI assisted annotate</span></h3>
+<p data-position="713" data-size="0"><span data-position="713" data-size="42">User AI model to inference the tumor area.</span><br>
+<img src="./MetaLite User’s Guide_files/I6r1UTy.png" alt="" class="" data-position="756" data-size="36"></p>
+<h3 class="" id="Ki67-antibody-statistic" data-id="Ki67-antibody-statistic"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Ki67-antibody-statistic" title="Ki67-antibody-statistic" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="798" data-size="23">Ki67 antibody statistic</span></h3>
+<p data-position="822" data-size="0"><span data-position="822" data-size="57">Statistic the Ki67 antibody expression of annotated area.</span><br>
+<img src="./MetaLite User’s Guide_files/kabLPnH.png" alt="" class="" data-position="880" data-size="36"></p>
+</details><h2 class="part" data-startline="32" data-endline="32" id="Introduction" data-id="Introduction"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Introduction" title="Introduction" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="925" data-size="12">Introduction</span></h2><p class="part" data-startline="33" data-endline="33" data-position="938" data-size="0"><span data-position="938" data-size="597">MetaLite software developed by JelloX Biotech Inc. is a Research Use Only (RUO) computer-assisted image analysis software. It is intended to aid pathologists and researchers in imaging annotation and analyzing cells of interest based on marker intensity, size, shape and volume using appropriate tools. This software also assists the users to select fields of view (FOVs) in the digital image with an embedded artificial intelligent based feature recognition model, and provides quantitative data on these FOVs such as marker distribution, distance between markers, and ratio of different markers.</span></p><div style="text-align:center">
+<p class="part" data-startline="36" data-endline="36" data-position="1582" data-size="0"><img src="./MetaLite User’s Guide_files/gLLGXty.png" alt="" class="" data-position="1582" data-size="36"></p>
+</div><h3 class="part" data-startline="40" data-endline="40" id="Supporting-file-format" data-id="Supporting-file-format"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Supporting-file-format" title="Supporting-file-format" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="1632" data-size="22">Supporting file format</span></h3><p class="part" data-startline="41" data-endline="42" data-position="1656" data-size="0"><span data-position="1656" data-size="33">Types of Files That You Can View.</span><br>
+<span data-position="1690" data-size="62">MetaLite can load and view different types of data, including:</span></p><ul class="part" data-startline="43" data-endline="47">
+<li class="" data-startline="43" data-endline="43" data-position="1757" data-size="0"><span data-position="1757" data-size="18">JPEG and JPG files</span></li>
+<li class="" data-startline="44" data-endline="44" data-position="1780" data-size="0"><span data-position="1780" data-size="18">TIFF and TIF files</span></li>
+<li class="" data-startline="45" data-endline="45" data-position="1803" data-size="0"><span data-position="1803" data-size="22">Multi-Layer TIF files.</span></li>
+<li class="" data-startline="46" data-endline="47" data-position="1829" data-size="0"><span data-position="1829" data-size="9">PNG files</span></li>
+</ul><h2 class="part" data-startline="48" data-endline="48" id="Installing" data-id="Installing"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Installing" title="Installing" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="1843" data-size="10">Installing</span></h2><p class="part" data-startline="49" data-endline="49" data-position="1854" data-size="0"><span data-position="1854" data-size="69">This chapter contains information of installing the MetaLite software</span></p><h3 class="part" data-startline="51" data-endline="51" id="Before-You-Start" data-id="Before-You-Start"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Before-You-Start" title="Before-You-Start" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="1929" data-size="16">Before You Start</span></h3><p class="part" data-startline="52" data-endline="52" data-position="1946" data-size="0"><span data-position="1946" data-size="68">Review the information in this section prior to installing MetaLite.</span></p><h3 class="part" data-startline="54" data-endline="54" id="Installation" data-id="Installation"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Installation" title="Installation" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="2020" data-size="12">Installation</span></h3><p class="part" data-startline="55" data-endline="55" data-position="2034" data-size="0"><span data-position="2034" data-size="40">To install MetaLite, follow these steps:</span></p><ol class="part" data-startline="56" data-endline="60" data-position="2075" data-size="0">
+<li class="" data-startline="56" data-endline="56" data-position="2078" data-size="0"><span data-position="2078" data-size="76">Ensure you are logged into Windows as a user with administrative privileges.</span></li>
+<li class="" data-startline="57" data-endline="57" data-position="2158" data-size="0"><span data-position="2158" data-size="144">Double-click “My Computer” or open “Windows Explorer” and navigate to the MetaLite installer file. (This file may have been downloaded from the </span><mark><span data-position="2304" data-size="17">Google Drive Link</span></mark><span data-position="2323" data-size="10"> web site)</span></li>
+<li class="" data-startline="58" data-endline="58" data-position="2337" data-size="0"><span data-position="2337" data-size="62">Double-click the “.msi” file to start the installation wizard.</span></li>
+<li class="" data-startline="59" data-endline="60" data-position="2403" data-size="0"><span data-position="2403" data-size="105">Follow the instructions on your screen to accept the terms of license agreement to complete installation.</span></li>
+</ol><h3 class="part" data-startline="61" data-endline="61" id="Modifying-or-Removing-the-MetaLite-Software" data-id="Modifying-or-Removing-the-MetaLite-Software"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Modifying-or-Removing-the-MetaLite-Software" title="Modifying-or-Removing-the-MetaLite-Software" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="2515" data-size="43">Modifying or Removing the MetaLite Software</span></h3><p class="part" data-startline="62" data-endline="62" data-position="2560" data-size="0"><span data-position="2560" data-size="204">Once MetaLite is installed, you can run the installer again to modify, repair, or remove the MetaLite software. If MetaLite is already installed, select from the following options on the installer window:</span></p><ul class="part" data-startline="63" data-endline="66">
+<li class="" data-startline="63" data-endline="63" data-position="2768" data-size="0"><strong data-position="2768" data-size="0"><span data-position="2770" data-size="6">Modify</span></strong><span data-position="2778" data-size="70"> to change the MetaLite installation by adding or deleting components.</span></li>
+<li class="" data-startline="64" data-endline="64" data-position="2852" data-size="0"><strong data-position="2852" data-size="0"><span data-position="2854" data-size="6">Repair</span></strong><span data-position="2862" data-size="142"> to reinstall all the components previously installed. This is the option to use if you are upgrading a previous installation to new software.</span></li>
+<li class="" data-startline="65" data-endline="66" data-position="3008" data-size="0"><strong data-position="3008" data-size="0"><span data-position="3010" data-size="6">Remove</span></strong><span data-position="3018" data-size="36"> to uninstall the MetaLite software.</span></li>
+</ul><h3 class="part" data-startline="67" data-endline="67" id="Starting-MetaLite" data-id="Starting-MetaLite"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Starting-MetaLite" title="Starting-MetaLite" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="3060" data-size="17">Starting MetaLite</span></h3><p class="part" data-startline="68" data-endline="68" data-position="3078" data-size="0"><span data-position="3078" data-size="25">To start MetaLite, click </span><strong data-position="3103" data-size="0"><span data-position="3105" data-size="5">Start</span></strong><span data-position="3112" data-size="34"> on the Windows taskbar, point to </span><strong data-position="3146" data-size="0"><span data-position="3148" data-size="12">All Programs</span></strong><span data-position="3162" data-size="3"> &gt; </span><strong data-position="3165" data-size="0"><span data-position="3167" data-size="17">MetaLite Beta 1.0</span></strong><span data-position="3186" data-size="13">, and select </span><strong data-position="3199" data-size="0"><span data-position="3201" data-size="8">MetaLite</span></strong><span data-position="3211" data-size="15">. Or click the </span><strong data-position="3226" data-size="0"><span data-position="3228" data-size="13">MetaLite Icon</span></strong><span data-position="3243" data-size="16"> on the Desktop.</span></p><h2 class="part" data-startline="70" data-endline="70" id="Overview" data-id="Overview"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Overview" title="Overview" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="3265" data-size="8">Overview</span></h2><p class="part" data-startline="71" data-endline="71" data-position="3274" data-size="0"><span data-position="3274" data-size="121">This chapter provides a tour of the MetaLite main window and describes how to use the navigation and magnification tools.</span></p><h3 class="part" data-startline="73" data-endline="73" id="Main-elements" data-id="Main-elements"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-elements" title="Main-elements" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="3401" data-size="14">Main elements:</span></h3><ul class="part" data-startline="74" data-endline="79">
+<li class="" data-startline="74" data-endline="74" data-position="3419" data-size="0"><strong data-position="3419" data-size="0"><span data-position="3421" data-size="11">Main viewer</span></strong><span data-position="3434" data-size="32"> – The main viewer of the image.</span></li>
+<li class="" data-startline="75" data-endline="75" data-position="3469" data-size="0"><strong data-position="3469" data-size="0"><span data-position="3471" data-size="4">Menu</span></strong><span data-position="3477" data-size="240"> – The menu bar lists all functions of MetaLite by categorizing them into File, Edit, Image, View, Tools, Windows, and Help. Some of the functions are locked in this version, please contact us to un-lock more details and advanced functions.</span></li>
+<li class="" data-startline="76" data-endline="76" data-position="3720" data-size="0"><strong data-position="3720" data-size="0"><span data-position="3722" data-size="7">Toolbar</span></strong><span data-position="3731" data-size="144"> – The toolbar contains a list of annotation and statistic functions. See next section for a quick reference list of each MetaLite toolbar icon.</span></li>
+<li class="" data-startline="77" data-endline="77" data-position="3879" data-size="0"><strong data-position="3879" data-size="0"><span data-position="3881" data-size="11">Zoom slider</span></strong><span data-position="3894" data-size="58"> – The zoom slider can magnify or shrink the current view.</span></li>
+<li class="" data-startline="78" data-endline="78" data-position="3955" data-size="0"><strong data-position="3955" data-size="0"><span data-position="3957" data-size="22">Image slice controller</span></strong><span data-position="3981" data-size="126"> – The image slice controller appears with multiple images only, and is used to view different focal areas on a z-stack image.</span></li>
+<li class="" data-startline="79" data-endline="79" data-position="4110" data-size="0"><strong data-position="4110" data-size="0"><span data-position="4112" data-size="16">Thumbnail window</span></strong><span data-position="4130" data-size="64"> – The thumbnail is a navigation tool that shows complete Image.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="83" data-endline="83" data-position="4242" data-size="0"><img src="./MetaLite User’s Guide_files/Rqc7MMn.png" alt="" class="" data-position="4242" data-size="36"></p>
+</div><h4 class="part" data-startline="87" data-endline="87" id="Main-viewer" data-id="Main-viewer"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-viewer" title="Main-viewer" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="4293" data-size="11">Main viewer</span></h4><p class="part" data-startline="88" data-endline="88" data-position="4306" data-size="0"><span data-position="4306" data-size="205">The main viewer displays the image with a region of interest (ROI). To move the image, press right mouse button on the Main viewer, and drag the image to another ROI while the cursor turns into grasp hand.</span></p><div style="text-align:center">
+<p class="part" data-startline="91" data-endline="91" data-position="4558" data-size="0"><img src="./MetaLite User’s Guide_files/4yMmcYv.png" alt="" class="" data-position="4558" data-size="36"></p>
+</div><h3 class="part" data-startline="95" data-endline="95" id="Channel-staining" data-id="Channel-staining"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Channel-staining" title="Channel-staining" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="4608" data-size="16">Channel staining</span></h3><div style="text-align:center">
+<p class="part" data-startline="98" data-endline="98" data-position="4671" data-size="0"><img src="./MetaLite User’s Guide_files/rMNiZIL.png" alt="" class="" data-position="4671" data-size="36"></p>
+</div><ul class="part" data-startline="102" data-endline="109">
+<li class="" data-startline="102" data-endline="109" data-position="4719" data-size="0"><strong data-position="4719" data-size="0"><span data-position="4721" data-size="13">Staining type</span></strong><span data-position="4736" data-size="52"> – The staining style of main viewer shows, include:</span>
+<ul>
+<li class="" data-startline="103" data-endline="103" data-position="4793" data-size="0">
+<p data-position="4789" data-size="0"><span data-position="4793" data-size="3">RGB</span></p>
+</li>
+<li class="" data-startline="104" data-endline="105" data-position="4801" data-size="0">
+<p data-position="4797" data-size="0"><span data-position="4801" data-size="11">HE (pseudo)</span></p>
+</li>
+<li class="" data-startline="106" data-endline="109" data-position="4826" data-size="0">
+<p data-position="4822" data-size="0"><span data-position="4826" data-size="12">IHC (pseudo)</span></p>
+</li>
+</ul>
+</li>
+</ul><h3 class="part" data-startline="110" data-endline="110" id="Statistic-panel" data-id="Statistic-panel"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-panel" title="Statistic-panel" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="4846" data-size="15">Statistic panel</span></h3><ul class="part" data-startline="111" data-endline="112">
+<li class="" data-startline="111" data-endline="111" data-position="4864" data-size="0"><strong data-position="4864" data-size="0"><span data-position="4866" data-size="15">Data value grid</span></strong><span data-position="4883" data-size="30"> – The form of statistic data.</span></li>
+<li class="" data-startline="112" data-endline="112" data-position="4916" data-size="0"><strong data-position="4916" data-size="0"><span data-position="4918" data-size="10">Data chart</span></strong><span data-position="4930" data-size="41"> – Plot the value in the data value grid.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="115" data-endline="115" data-position="5018" data-size="0"><img src="./MetaLite User’s Guide_files/L1CucZ2.png" alt="" class="" data-position="5018" data-size="36"></p>
+</div><h3 class="part" data-startline="119" data-endline="119" id="Menu" data-id="Menu"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Menu" title="Menu" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="5068" data-size="4">Menu</span></h3><h4 class="part" data-startline="120" data-endline="120" id="Open-File" data-id="Open-File"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Open-File" title="Open-File" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="5078" data-size="9">Open File</span></h4><ul class="part" data-startline="121" data-endline="122">
+<li class="" data-startline="121" data-endline="121" data-position="5090" data-size="0"><strong data-position="5090" data-size="0"><span data-position="5092" data-size="9">Open File</span></strong><span data-position="5103" data-size="1"> </span><code data-position="5107" data-size="8">Ctrl + O</code><span data-position="5118" data-size="43"> – images that are stored on your computer.</span></li>
+<li class="" data-startline="122" data-endline="122" data-position="5164" data-size="0"><strong data-position="5164" data-size="0"><span data-position="5166" data-size="15">Open Annotation</span></strong><span data-position="5183" data-size="283"> – Open the “.jellox” file that pre-annotated with Labels of the image. The annotations labeled by MetaLite will be saved as a “.jellox” file. When loading the image, if there is a same name “.jellox” file in the same file directory, MetaLite will automatic load the annotation file.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="125" data-endline="125" data-position="5513" data-size="0"><img src="./MetaLite User’s Guide_files/bueyyxX.png" alt="" class="" data-position="5513" data-size="36"></p>
+</div><h4 class="part" data-startline="129" data-endline="129" id="Save-Annotations" data-id="Save-Annotations"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Save-Annotations" title="Save-Annotations" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="5564" data-size="16">Save Annotations</span></h4><ul class="part" data-startline="130" data-endline="133">
+<li class="" data-startline="130" data-endline="130" data-position="5583" data-size="0"><strong data-position="5583" data-size="0"><span data-position="5585" data-size="15">Save Annotation</span></strong><span data-position="5602" data-size="1"> </span><code data-position="5606" data-size="8">Ctrl + S</code><span data-position="5617" data-size="76"> – Save the labeled annotation layer of current image to the “.jellox” file.</span></li>
+<li class="" data-startline="131" data-endline="131" data-position="5696" data-size="0"><strong data-position="5696" data-size="0"><span data-position="5698" data-size="18">Save Annotation As</span></strong><span data-position="5718" data-size="1"> </span><code data-position="5722" data-size="16">Ctrl + Shift + S</code><span data-position="5741" data-size="67"> – Save the annotation to a file named alter to current Image name.</span></li>
+<li class="" data-startline="132" data-endline="132" data-position="5811" data-size="0"><strong data-position="5811" data-size="0"><span data-position="5813" data-size="19">Save All Annotation</span></strong><span data-position="5834" data-size="1"> </span><code data-position="5838" data-size="22">Ctrl + Alt + Shift + S</code><span data-position="5863" data-size="56"> – Save all the annotation layers of each image at once.</span></li>
+<li class="" data-startline="133" data-endline="133" data-position="5922" data-size="0"><strong data-position="5922" data-size="0"><span data-position="5924" data-size="9">Auto save</span></strong><span data-position="5935" data-size="110"> – Switch on/off the auto Save Annotation method to period execute the Save Annotation to preserve work stage.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="136" data-endline="136" data-position="6093" data-size="0"><img src="./MetaLite User’s Guide_files/sdSPP6n.png" alt="" class="" data-position="6093" data-size="36"></p>
+</div><h4 class="part" data-startline="139" data-endline="139" id="Activate-Server" data-id="Activate-Server"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Activate-Server" title="Activate-Server" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="6143" data-size="15">Activate Server</span></h4><ul class="part" data-startline="140" data-endline="140">
+<li class="" data-startline="140" data-endline="140" data-position="6161" data-size="0"><strong data-position="6161" data-size="0"><span data-position="6163" data-size="24">Activate MetaLite Server</span></strong><span data-position="6189" data-size="296"> – The statistic calculation of the MetaLite software is working into a virtual machine called “Metalite Analyzer”. If the server is disconnected or unavailable, you can restart the MetaLite server manually. Once the analyzer is activate the JelloX logo will turns from black white into colorful.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="143" data-endline="144" data-position="6532" data-size="0"><img src="./MetaLite User’s Guide_files/Ag35FwB.png" alt="" class="" data-position="6532" data-size="36"><br>
+<img src="./MetaLite User’s Guide_files/R5ha2Am.png" alt="" width="563" class="" data-position="6569" data-size="42"></p>
+</div><h2 class="part" data-startline="148" data-endline="148" id="Tools" data-id="Tools"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Tools" title="Tools" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="6624" data-size="5">Tools</span></h2><h3 class="part" data-startline="149" data-endline="149" id="Annotation-tools" data-id="Annotation-tools"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-tools" title="Annotation-tools" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="6634" data-size="16">Annotation tools</span></h3><table class="part" data-startline="150" data-endline="155">
+<thead>
+<tr>
+<th style="text-align:center"><span data-position="6653" data-size="4">Tool</span></th>
+<th><span data-position="6660" data-size="6">Action</span></th>
+<th style="text-align:center"><span data-position="6668" data-size="8">Shortcut</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><font face="Segoe MDL2 Assets"><span data-position="6739" data-size="1"></span></font></td>
+<td><strong data-position="6748" data-size="0"><span data-position="6750" data-size="4">Draw</span></strong><span data-position="6756" data-size="76">: A free-form annotation pen drawing tool that labeling the annotation area.</span></td>
+<td style="text-align:center"><span data-position="6834" data-size="1">D</span></td>
+</tr>
+<tr>
+<td style="text-align:center"><font face="Segoe MDL2 Assets"><span data-position="6869" data-size="1"></span></font></td>
+<td><strong data-position="6878" data-size="0"><span data-position="6880" data-size="6">Eraser</span></strong><span data-position="6888" data-size="91">: A free-form annotation erasing tool that can eliminate the annotation area we don’t want.</span></td>
+<td style="text-align:center"><span data-position="6981" data-size="1">E</span></td>
+</tr>
+<tr>
+<td style="text-align:center"><font face="Segoe MDL2 Assets"><span data-position="7016" data-size="1"></span></font></td>
+<td><strong data-position="7025" data-size="0"><span data-position="7027" data-size="7">Polygon</span></strong><span data-position="7036" data-size="43">: A polygon annotation region drawing tool.</span></td>
+<td style="text-align:center"><span data-position="7080" data-size="1">P</span></td>
+</tr>
+<tr>
+<td style="text-align:center"><font face="Segoe MDL2 Assets"><span data-position="7115" data-size="1"></span></font></td>
+<td><strong data-position="7124" data-size="0"><span data-position="7126" data-size="9">rectangle</span></strong><span data-position="7137" data-size="44"> A rectangle annotation region drawing tool.</span></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table><div class="alert alert-info part" data-startline="157" data-endline="161" data-position="7185" data-size="383">
+<p data-position="7193" data-size="0"><strong data-position="7193" data-size="0"><span data-position="7195" data-size="5">Tips:</span></strong></p>
+<ul>
+<li class="" data-startline="159" data-endline="159" data-position="7205" data-size="0"><strong data-position="7205" data-size="0"><span data-position="7207" data-size="14">Draw and Erase</span></strong><span data-position="7223" data-size="7"> – Use </span><strong data-position="7230" data-size="0"><span data-position="7232" data-size="17">Ctrl + MouseWheel</span></strong><span data-position="7251" data-size="121"> to adjust the drawing/erasing brush size. Use Shift + MouseWheel to quickly adjust the transparency of annotating brush.</span></li>
+<li class="" data-startline="160" data-endline="161" data-position="7375" data-size="0"><strong data-position="7375" data-size="0"><span data-position="7377" data-size="7">Polygon</span></strong><span data-position="7386" data-size="9"> – Press </span><strong data-position="7395" data-size="0"><span data-position="7397" data-size="3">Esc</span></strong><span data-position="7402" data-size="32"> to cancel selection, and press </span><strong data-position="7434" data-size="0"><span data-position="7436" data-size="5">Enter</span></strong><span data-position="7443" data-size="120"> to close the selected contour. Double click the main viewer to close the selected contour, or click to the start point.</span></li>
+</ul>
+</div><h3 class="part" data-startline="163" data-endline="163" id="Statistic-tools" data-id="Statistic-tools"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-tools" title="Statistic-tools" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="7573" data-size="15">Statistic tools</span></h3><table class="part" data-startline="164" data-endline="167">
+<thead>
+<tr>
+<th style="text-align:center"><span data-position="7591" data-size="4">Tool</span></th>
+<th><span data-position="7598" data-size="6">Action</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="./MetaLite User’s Guide_files/51fzki5.png" alt="" class="" data-position="7631" data-size="36"></td>
+<td><strong data-position="7668" data-size="0"><span data-position="7670" data-size="12">AI inference</span></strong><span data-position="7684" data-size="266"> can automatically annotate the cancer tissue area. The inference AI model in this version is limited to breast cancer tissue and CPU computing. (If you are interested in other cancer model or GPU hardware acceleration model, please contact us for more information.)</span></td>
+</tr>
+<tr>
+<td style="text-align:center"><font face="Segoe MDL2 Assets"><span data-position="7985" data-size="1"></span></font></td>
+<td><strong data-position="7994" data-size="0"><span data-position="7996" data-size="20">Statistical analysis</span></strong><span data-position="8018" data-size="328"> of antibody signal percentage that is covered by current annotation layer. The demo statistic method in this version is for nuclear-specific antibody percentage calculation. (If you are interested in other statistic method such as membrane-specific antibody expression, TIL calculation, please contact us for more information.)</span></td>
+</tr>
+</tbody>
+</table><h2 class="part" data-startline="169" data-endline="169" id="Main-operation" data-id="Main-operation"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-operation" title="Main-operation" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="8353" data-size="14">Main operation</span></h2><h3 class="part" data-startline="170" data-endline="170" id="Main-viewer-zooms-inout" data-id="Main-viewer-zooms-inout"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-viewer-zooms-inout" title="Main-viewer-zooms-inout" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="8372" data-size="25">Main viewer zooms in/out.</span></h3><p class="part" data-startline="171" data-endline="171" data-position="8398" data-size="0"><span data-position="8398" data-size="85">Scroll the Mouse Wheel up/down on the main viewer to zoom in/zoom out the image view.</span></p><div style="text-align:center">
+<p class="part" data-startline="174" data-endline="174" data-position="8530" data-size="0"><img src="./MetaLite User’s Guide_files/8AW9oqT.png" alt="" width="300" class="" data-position="8530" data-size="42"></p>
+</div><h3 class="part" data-startline="177" data-endline="177" id="Scale-sliding-bar-of-the-image-view" data-id="Scale-sliding-bar-of-the-image-view"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Scale-sliding-bar-of-the-image-view" title="Scale-sliding-bar-of-the-image-view" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="8585" data-size="35">Scale sliding bar of the image view</span></h3><p class="part" data-startline="178" data-endline="178" data-position="8621" data-size="0"><span data-position="8621" data-size="105">Drag the sliding bar next to the thumbnail view or there is a quick scale button next to the sliding bar.</span></p><div style="text-align:center">
+<p class="part" data-startline="181" data-endline="181" data-position="8773" data-size="0"><img src="./MetaLite User’s Guide_files/pOvZEuI.png" alt="" class="" data-position="8773" data-size="36"></p>
+</div><h3 class="part" data-startline="184" data-endline="184" id="Annotation-layer-panel" data-id="Annotation-layer-panel"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-layer-panel" title="Annotation-layer-panel" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="8822" data-size="22">Annotation layer panel</span></h3><ul class="part" data-startline="185" data-endline="192">
+<li class="" data-startline="185" data-endline="185" data-position="8847" data-size="0"><strong data-position="8847" data-size="0"><span data-position="8849" data-size="14">Add Annotation</span></strong><span data-position="8865" data-size="52"> – Use to add new annotation layer to current image.</span></li>
+<li class="" data-startline="186" data-endline="186" data-position="8920" data-size="0"><strong data-position="8920" data-size="0"><span data-position="8922" data-size="15">Annotation Name</span></strong><span data-position="8939" data-size="30"> – Double click to rename the </span><strong data-position="8969" data-size="0"><span data-position="8971" data-size="15">Annotation Name</span></strong><span data-position="8988" data-size="86">. The gray bar in the background represents the transparency of that annotation layer.</span></li>
+<li class="" data-startline="187" data-endline="192" data-position="9077" data-size="0"><strong data-position="9077" data-size="0"><span data-position="9079" data-size="14">Color Selector</span></strong><span data-position="9095" data-size="31"> – Select the annotation color.</span><br>
+<span data-position="9128" data-size="17">R – Red intensity</span><br>
+<span data-position="9146" data-size="19">G – Green intensity</span><br>
+<span data-position="9166" data-size="18">B – Blue intensity</span><br>
+<span data-position="9185" data-size="55">A – Alpha intensity, the inner annotation transparency.</span></li>
+</ul><div style="text-align:center">
+<p class="part" data-startline="195" data-endline="195" data-position="9288" data-size="0"><img src="./MetaLite User’s Guide_files/JtLfrue.png" alt="" class="" data-position="9288" data-size="36"></p>
+</div><div style="text-align:center">
+<p class="part" data-startline="202" data-endline="202" data-position="9680" data-size="0"><img src="./MetaLite User’s Guide_files/m64azds.png" alt="" class="" data-position="9680" data-size="36"></p>
+</div><h2 class="part" data-startline="205" data-endline="205" id="Function-Detail" data-id="Function-Detail"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Function-Detail" title="Function-Detail" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="9728" data-size="15">Function Detail</span></h2><h3 class="part" data-startline="206" data-endline="206" id="Hide-all-annotation" data-id="Hide-all-annotation"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Hide-all-annotation" title="Hide-all-annotation" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="9748" data-size="19">Hide all annotation</span></h3><p class="part" data-startline="207" data-endline="207" data-position="9768" data-size="0"><span data-position="9768" data-size="81">Hide all annotation layers to quickly check the tissue covered by the annotation.</span></p><div style="text-align:center">
+<p class="part" data-startline="210" data-endline="210" data-position="9896" data-size="0"><img src="./MetaLite User’s Guide_files/vgfClEl.png" alt="" class="" data-position="9896" data-size="36"></p>
+</div><h3 class="part" data-startline="213" data-endline="213" id="Image-staining" data-id="Image-staining"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Image-staining" title="Image-staining" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="9945" data-size="14">Image staining</span></h3><p class="part" data-startline="214" data-endline="214" data-position="9960" data-size="0"><span data-position="9960" data-size="85">Change the staining algorithm of each channel of the image to RGB/IHC/H&amp;E color-code.</span></p><div style="text-align:center">
+<p class="part" data-startline="217" data-endline="217" data-position="10093" data-size="0"><img src="./MetaLite User’s Guide_files/w4GMHwk.png" alt="" class="" data-position="10093" data-size="36"></p>
+</div><p class="part" data-startline="220" data-endline="220" data-position="10138" data-size="0"><span data-position="10138" data-size="73">You can drag the stain board to adjust the displayed color on the screen.</span></p><div style="text-align:center">
+<p class="part" data-startline="223" data-endline="223" data-position="10258" data-size="0"><img src="./MetaLite User’s Guide_files/jB9gizw.png" alt="" class="" data-position="10258" data-size="36"></p>
+</div><p class="part" data-startline="226" data-endline="226" data-position="10303" data-size="0"><span data-position="10303" data-size="139">In pseudo H&amp;E, you can use left button to drag staining board to change the channel staining. And modify the staining color to other color.</span></p><div style="text-align:center">
+<p class="part" data-startline="229" data-endline="229" data-position="10489" data-size="0"><img src="./MetaLite User’s Guide_files/knJuL7d.png" alt="" width="300" class="" data-position="10489" data-size="42"></p>
+</div><p class="part" data-startline="232" data-endline="232" data-position="10540" data-size="0"><span data-position="10540" data-size="49">Double click on the slider thumb to choose color.</span></p><div style="text-align:center">
+<p class="part" data-startline="235" data-endline="235" data-position="10636" data-size="0"><img src="./MetaLite User’s Guide_files/DjalBlx.png" alt="" class="" data-position="10636" data-size="36"></p>
+</div><h3 class="part" data-startline="239" data-endline="239" id="AI-inference" data-id="AI-inference"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#AI-inference" title="AI-inference" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="10686" data-size="12">AI inference</span></h3><p class="part" data-startline="240" data-endline="240" data-position="10699" data-size="0"><span data-position="10699" data-size="280">We use pre-train AI model to predict tumor region. Once you press the AI prediction button, it will create a new annotation layer and label the tumor region on the layer. For now, we only release breast cancer model, the rest of other cancer models will be released in the future.</span></p><div style="text-align:center">
+<p class="part" data-startline="243" data-endline="243" data-position="11027" data-size="0"><img src="./MetaLite User’s Guide_files/JNiAGKJ.png" alt="" class="" data-position="11027" data-size="36"></p>
+</div><div class="alert alert-info part" data-startline="247" data-endline="249" data-position="11073" data-size="458">
+<p data-position="11081" data-size="0"><strong data-position="11081" data-size="0"><span data-position="11083" data-size="7">Notice:</span></strong><span data-position="11093" data-size="342"> The version of MetaLite is based on CPU AI inference. For inference 2000x2000 image on AMD Ryzen 5 3600X Six-Core Processor computer will take about 30~40 seconds. It could be accelerated by Nvidia GeForce RTX 2080Ti 11GB GPU to 3~4 seconds. If you are interested in GPU hardware acceleration version, please contact us for more information.</span><br>
+<span data-position="11436" data-size="91">The Multiple image AI prediction is doing the same operation as AI inference on each image.</span></p>
+</div><h2 class="part" data-startline="252" data-endline="252" id="Statistic" data-id="Statistic"><a class="anchor hidden-xs" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic" title="Statistic" smoothhashscroll=""><span class="octicon octicon-link"></span></a><span data-position="11536" data-size="9">Statistic</span></h2><p class="part" data-startline="253" data-endline="253" data-position="11546" data-size="0"><span data-position="11546" data-size="144">We calculate nuclear-specific antibody covered percentage area of the nuclear counter stain to measure the expression level (High/Low then 14%).</span></p><ol class="part" data-startline="254" data-endline="258" data-position="11692" data-size="0">
+<li class="" data-startline="254" data-endline="255" data-position="11695" data-size="0"><span data-position="11695" data-size="62">select the color channel corresponding to each cell component.</span><br>
+<img src="./MetaLite User’s Guide_files/6NZyRPl.png" alt="" class="" data-position="11758" data-size="36"></li>
+<li class="" data-startline="256" data-endline="256" data-position="11798" data-size="0"><span data-position="11798" data-size="140">select the image apparent magnification 20x/40x, set the cell pixel size, and threshold of cell channel intensity to optimize the algorithm.</span></li>
+<li class="" data-startline="257" data-endline="258" data-position="11943" data-size="0"><span data-position="11943" data-size="6">click </span><strong data-position="11949" data-size="0"><span data-position="11951" data-size="4">“OK”</span></strong><span data-position="11957" data-size="1">.</span><br>
+<img src="./MetaLite User’s Guide_files/ZQ14J9f.png" alt="" class="" data-position="11959" data-size="36"></li>
+</ol></div>
+        <div class="ui-toc dropup unselectable hidden-print scrollspy-view" style="display: none; left: 536.141px;">
+            <div class="pull-left dropdown">
+                <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#" role="button" aria-haspopup="true" aria-expanded="false" title="目錄">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel"><div class="toc"><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#MetaLite-User%E2%80%99s-Guide" title="MetaLite User’s Guide" smoothhashscroll="">MetaLite User’s Guide</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Introduction" title="Introduction" smoothhashscroll="">Introduction</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Supporting-file-format" title="Supporting file format" smoothhashscroll="">Supporting file format</a></li>
+</ul>
+</li>
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#tip1" title="Installing" smoothhashscroll="">Installing</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Before-You-Start" title="Before You Start" smoothhashscroll="">Before You Start</a></li>
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Installation" title="Installation" smoothhashscroll="">Installation</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Modifying-or-Removing-the-MetaLite-Software" title="Modifying or Removing the MetaLite Software" smoothhashscroll="">Modifying or Removing the MetaLite Software</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Starting-MetaLite" title="Starting MetaLite" smoothhashscroll="">Starting MetaLite</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Overview" title="Overview" smoothhashscroll="">Overview</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-elements" title="Main elements:" smoothhashscroll="">Main elements:</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Channel-staining" title="Channel staining" smoothhashscroll="">Channel staining</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-panel" title="Statistic panel" smoothhashscroll="">Statistic panel</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Menu" title="Menu" smoothhashscroll="">Menu</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Tools" title="Tools" smoothhashscroll="">Tools</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-tools" title="Annotation tools" smoothhashscroll="">Annotation tools</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-tools" title="Statistic tools" smoothhashscroll="">Statistic tools</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-operation" title="Main operation" smoothhashscroll="">Main operation</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-viewer-zooms-inout" title="Main viewer zooms in/out." smoothhashscroll="">Main viewer zooms in/out.</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Scale-sliding-bar-of-the-image-view" title="Scale sliding bar of the image view" smoothhashscroll="">Scale sliding bar of the image view</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-layer-panel" title="Annotation layer panel" smoothhashscroll="">Annotation layer panel</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Function-Detail" title="Function Detail" smoothhashscroll="">Function Detail</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Hide-all-annotation" title="Hide all annotation" smoothhashscroll="">Hide all annotation</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Image-staining" title="Image staining" smoothhashscroll="">Image staining</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#AI-inference" title="AI inference" smoothhashscroll="">AI inference</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic" title="Statistic" smoothhashscroll="">Statistic</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">全部展開</a><a class="back-to-top" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">回到頂部</a><a class="go-to-bottom" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">移至底部</a></div></ul>
+            </div>
+        </div>
+        <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print scrollspy-body affix" data-spy="affix" style="top: 20px; left: 284.5px; width: 572.5px;"><div class="toc"><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#MetaLite-User%E2%80%99s-Guide" title="MetaLite User’s Guide" smoothhashscroll="">MetaLite User’s Guide</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Introduction" title="Introduction" smoothhashscroll="">Introduction</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Supporting-file-format" title="Supporting file format" smoothhashscroll="">Supporting file format</a></li>
+</ul>
+</li>
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#tip1" title="Installing" smoothhashscroll="">Installing</a><ul class="nav">
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Before-You-Start" title="Before You Start" smoothhashscroll="">Before You Start</a></li>
+<li class=""><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Installation" title="Installation" smoothhashscroll="">Installation</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Modifying-or-Removing-the-MetaLite-Software" title="Modifying or Removing the MetaLite Software" smoothhashscroll="">Modifying or Removing the MetaLite Software</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Starting-MetaLite" title="Starting MetaLite" smoothhashscroll="">Starting MetaLite</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Overview" title="Overview" smoothhashscroll="">Overview</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-elements" title="Main elements:" smoothhashscroll="">Main elements:</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Channel-staining" title="Channel staining" smoothhashscroll="">Channel staining</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-panel" title="Statistic panel" smoothhashscroll="">Statistic panel</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Menu" title="Menu" smoothhashscroll="">Menu</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Tools" title="Tools" smoothhashscroll="">Tools</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-tools" title="Annotation tools" smoothhashscroll="">Annotation tools</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic-tools" title="Statistic tools" smoothhashscroll="">Statistic tools</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-operation" title="Main operation" smoothhashscroll="">Main operation</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Main-viewer-zooms-inout" title="Main viewer zooms in/out." smoothhashscroll="">Main viewer zooms in/out.</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Scale-sliding-bar-of-the-image-view" title="Scale sliding bar of the image view" smoothhashscroll="">Scale sliding bar of the image view</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Annotation-layer-panel" title="Annotation layer panel" smoothhashscroll="">Annotation layer panel</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Function-Detail" title="Function Detail" smoothhashscroll="">Function Detail</a><ul class="nav">
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Hide-all-annotation" title="Hide all annotation" smoothhashscroll="">Hide all annotation</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Image-staining" title="Image staining" smoothhashscroll="">Image staining</a></li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#AI-inference" title="AI inference" smoothhashscroll="">AI inference</a></li>
+</ul>
+</li>
+<li><a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#Statistic" title="Statistic" smoothhashscroll="">Statistic</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">全部展開</a><a class="back-to-top" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">回到頂部</a><a class="go-to-bottom" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">移至底部</a></div></div>
+    </div>
+</div>
+<!-- clipboard modal -->
+<div class="modal fade" id="clipboardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">從剪貼簿匯入</h4>
+            </div>
+            <div class="modal-body">
+                <div contenteditable="" data-ph="在這裡貼上 Markdown 或是網頁內容..." id="clipboardModalContent" style="overflow:auto;max-height:50vh"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" id="clipboardModalClear">清空</button>
+                <button type="button" class="btn btn-primary" id="clipboardModalConfirm">匯入</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- basic use modal -->
+<div class="modal fade basic-use-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-lock"></i> 您需要寫入權限</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5>您目前的權限只能瀏覽，請向系統管理員取得編輯及留言的權限</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ui-request-permission">請求權限</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- team locked modal -->
+<div class="modal fade team-locked-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-lock"></i> 此團隊已被停用</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5>抱歉，此團隊已被停用，無法編輯筆記</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- locked modal -->
+<div class="modal fade locked-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-lock"></i> 此份筆記已被鎖定</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5>抱歉，只有擁有者可以編輯此筆記</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- limit modal -->
+<div class="modal fade limit-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-exclamation-triangle"></i> 到達上限</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5>抱歉，您已使用到此份筆記可用的最大長度</h5>
+                <strong>請減少內容或是將內容切成更多筆記，謝謝！</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gist import modal -->
+<div class="modal fade" id="gistImportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">從 Gist 匯入</h4>
+            </div>
+            <div class="modal-body">
+                <input type="url" class="form-control" placeholder="在這裡貼上 gist 網址... (like: https://gist.github.com/username/gistid)" id="gistImportModalContent">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" id="gistImportModalClear">清空</button>
+                <button type="button" class="btn btn-primary" id="gistImportModalConfirm">匯入</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- snippet import modal -->
+<div class="modal fade" id="snippetImportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">從 Snippet 匯入</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="snippetImportModalAccessToken">
+                <input type="hidden" id="snippetImportModalBaseURL">
+                <div class="ui-field-contain" style="display:table;margin-bottom:10px;width:100%;">
+                    <div style="display:table-row;margin-bottom:5px;">
+                        <label style="display:table-cell;">專案</label>
+                        <select class="form-control" id="snippetImportModalProjects" style="display:table-cell;" disabled="disabled">
+                            <option value="init" selected="selected" disabled="disabled">從可用的專案中選擇</option>
+                        </select>
+                    </div>
+                    <div style="display:table-row;">
+                        <label style="display:table-cell;">Snippet</label>
+                        <select class="form-control" id="snippetImportModalSnippets" style="display:table-cell;" disabled="disabled">
+                            <option value="init" selected="selected" disabled="disabled">從可用的 Snippets 中選擇</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="snippet-import-or">或是</p>
+                <input type="url" class="form-control" placeholder="/projects/:id/snippets/:snippet_id" id="snippetImportModalContent" disabled="disabled">
+            </div>
+            <div class="modal-footer">
+                <span id="snippetImportModalLoading"><i class="fa fa-refresh fa-spin fa-fw"></i></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" id="snippetImportModalClear">清空</button>
+                <button type="button" class="btn btn-primary" id="snippetImportModalConfirm" disabled="disabled">匯入</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- snippet export modal -->
+<div class="modal fade" id="snippetExportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">匯出到 Snippet</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="snippetExportModalAccessToken">
+                <input type="hidden" id="snippetExportModalBaseURL">
+                <div class="ui-field-contain" style="display:table;margin-bottom:10px;width:100%;">
+                    <div style="display:table-row;margin-bottom:5px;">
+                        <label style="display:table-cell;">標題</label>
+                        <input class="form-control" placeholder="new snippet" type="text" id="snippetExportModalTitle">
+                    </div>
+                    <div style="display:table-row;margin-bottom:5px;">
+                        <label style="display:table-cell;">檔名</label>
+                        <input class="form-control" placeholder="new_snippet.md" type="text" id="snippetExportModalFileName">
+                    </div>
+                    <div style="display:table-row;margin-bottom:5px;">
+                        <label style="display:table-cell;">專案</label>
+                        <select class="form-control" id="snippetExportModalProjects" style="display:table-cell;">
+                            <option value="init" selected="selected" disabled="disabled">選擇可用的專案</option>
+                        </select>
+                    </div>
+                    <div style="display:table-row;margin-bottom:5px;">
+                        <label style="display:table-cell;">可見層級</label>
+                        <select class="form-control" id="snippetExportModalVisibility" style="display:table-cell;">
+                            <option value="" selected="selected" disabled="disabled">選擇可見層級</option>
+                            <option value="0">Private</option>
+                            <option value="10">Internal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span id="snippetExportModalLoading"><i class="fa fa-refresh fa-spin fa-fw"></i></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="snippetExportModalConfirm">匯出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- delete modal -->
+<div class="modal fade delete-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">您確定嗎？</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5 class="ui-delete-modal-msg">您確定要將這篇筆記刪除嗎？</h5>
+                <strong class="ui-delete-modal-item">全部的使用者都將會失去連線。</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger ui-delete-modal-confirm">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- template notes modal -->
+<div class="modal fade template-modal" id="templateModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: calc(100vw - 20px); max-width: 1000px;">
+        <div class="modal-content template-content">
+            <div class="modal-header">
+                <button type="button" class="close ui-template-cancel visible-xs hidden-xs" style="margin-top: 2px !important; font-size: 15px !important; display: none;"><span aria-hidden="true">取消</span></button>
+                <button type="button" class="close ui-template-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times fa-18"></i></span></button>
+                <h4 class="modal-title ui-template-title" id="mySmallModalLabel"><i class="fa fa-file-image-o"></i> <span>從範本新增筆記</span></h4>
+                <h4 class="modal-title visible-xs hidden-xs ui-template-title-xs"><i class="fa fa-file-image-o"></i> <span>從範本新增筆記</span></h4>
+            </div>
+            <div class="modal-body" style="padding: 0px;">
+                <div class="row">
+                    <div class="col-sm-8 template-preview-container hidden-xs">
+                        <div>
+                            <div class="ui-template-spinner unselectable hidden-print"><div class="spinner" role="progressbar" style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;"><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-0-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(0deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-1-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(32deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-2-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(65deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-3-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(98deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-4-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(130deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-5-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(163deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-6-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(196deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-7-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(229deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-8-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(261deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-9-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(294deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-10-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(327deg) translate(30px, 0px); border-radius: 0px;"></div></div></div></div>
+                            <iframe class="template-viewer" style="width: 100%; height: 100%; border: none;" src="./MetaLite User’s Guide_files/saved_resource.html"></iframe>
+                            <div class="template-empty ui-template-viewer-empty" style="display: none; margin: 0px;">
+                                <img src="./MetaLite User’s Guide_files/not-available.svg">
+                                <div>
+                                    <div>哎呀</div>
+                                    <div>這個範本無法使用</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="visible-xs btn btn-primary ui-use-template-btn-mobile">套用範本</button>
+                    </div>
+                    <div class="col-sm-4 template-list-container">
+                        <div class="ui-templates-container">
+                            
+                                <button type="button" class="btn btn-default ui-create-template-btn"><span style="margin-right: -20px;">建立新範本</span><i class="fa fa-plus fa-fw" style="float: right; margin-top: 3px;"></i></button>
+                            
+                            <div class="dropdown ui-template-list-filter" style="margin: 20px;">
+                                <a class="ui-template-list-filter-label" id="template-list-filter" data-filter-type="all" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>全部範本</span><i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 10px;"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="template-list-filter" style="right: 0px; left: auto;">
+                                    <li role="presentation"><a role="menuitem" class="ui-template-filter-all" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">全部範本</a></li>
+                                    
+                                    <li role="presentation"><a role="menuitem" class="ui-template-filter-default" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">預設範本</a></li>
+                                    <li role="presentation"><a role="menuitem" class="ui-template-filter-personal" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">個人範本</a></li>
+                                    
+                                    <li role="presentation"><a role="menuitem" class="ui-template-filter-team" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">團隊範本</a></li>
+                                    
+                                    <li role="presentation"><a role="menuitem" class="ui-template-filter-shared" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">與我分享</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="template-empty ui-template-list-empty">
+                                <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                                <div>沒有任何範本</div>
+                            </div>
+                            <div class="list-group ui-template-list" style="flex:1;">
+                            </div>
+                            <button type="button" class="btn btn-primary ui-use-template-btn hidden-xs">套用範本</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- create template modal -->
+<div class="modal fade create-template-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content template-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 2px; height: 17px;"><span aria-hidden="true"><i class="fa fa-times fa-18"></i></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">建立一個範本</h4>
+            </div>
+            <div class="modal-body text-center" style="color:black; padding: 20px; padding-bottom: 10px; text-align: left;">
+                <label for="templateName" style="font-size:18px; font-weight: normal;">範本名稱</label>
+                <input type="text" id="templateName" class="form-control" placeholder="範本名稱" aria-label="TemplateName" aria-describedby="template-name" maxlength="250">
+            </div>
+            <div class="modal-footer" style="border: none; padding: 20px;">
+                <button type="button" class="btn btn-primary ui-create-template-modal-confirm" style="min-width:54px;">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- delete template modal -->
+<div class="modal fade delete-template-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content template-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 2px; height: 17px;"><span aria-hidden="true"><i class="fa fa-times fa-18"></i></span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">刪除範本</h4>
+            </div>
+            <div class="modal-body text-center" style="color:black; padding: 14.5px 15px; padding-bottom: 0px; text-align: left;">
+                <p class="ui-delete-modal-msg" style="font-size: 15px;">您確定要刪除這個範本嗎？</p>
+                <div class="form-check" style="display: flex;">
+                    <input type="checkbox" class="form-check-input ui-delete-note-check" style="margin-top: 7px;" id="deleteNoteCheck">
+                    <label class="form-check-label" style="margin-top: 3px; margin-left: 5px; font-weight: 400;" for="deleteNoteCheck">
+                        保留範本內容
+                        <div style="font-size: 13px; margin-top: 5px; color: #818181; line-height: 18px;">僅從範本庫移除並轉為一般筆記，且保留筆記內容與版本、留言等</div>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer" style="border: none; padding: 20px 15px; display: flex;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="flex:1;">取消</button>
+                <button type="button" class="btn btn-danger ui-delete-template-modal-confirm" style="flex:1;">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- refresh modal -->
+<div class="modal fade" id="refreshModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">此頁面需要重新整理</h4>
+            </div>
+            <div class="modal-body">
+                <div class="incompatible-version">
+                    <h5>您使用的不是相容的客戶端</h5>
+                    <strong>請重新整理來更新</strong>
+                </div>
+                <div class="new-version" style="display:none;">
+                    <h5>新版本來了！</h5>
+                    <a href="https://hackmd.io/s/release-notes" target="_blank">請由此查閱更新紀錄</a>
+                    <br>
+                    <strong>請重新整理來享受最新功能</strong>
+                </div>
+                <div class="user-state-changed" style="display:none;">
+                    <h5>您的使用者狀態已變更</h5>
+                    <strong>請重新整理來載入新的使用者狀態</strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="refreshModalRefresh">重新整理</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- signin modal -->
+<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px; right: 20px; position: absolute;"><span aria-hidden="true">×</span></button>
+            
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<h3>登入</h3>
+
+<form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded" novalidate="true">
+    <div class="dn"><input type="hidden" name="_csrf" value="NDOwJuQS-X28iulmcOq8leDxUz0hT8arbrEA"></div>
+    <div class="dn"><input type="hidden" name="create_team" value="false"></div>
+    <div class="dn"><input type="hidden" name="create_paid_team" value="false"></div>
+    <div class="form-group  ">
+        <label for="email" class="control-label">Email</label>
+        <label for="inputEmail" class="control-label pull-right errors">
+            
+        </label>
+        <span class="help-block control-label with-errors pull-right" style="display: inline;"></span>
+        <div class="input-block">
+            
+                <input type="email" class="form-control" name="email" placeholder="您的 Email" required="" autocomplete="email">
+            
+            <span class="error-sign"></span>
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="password" class="control-label">密碼</label>
+        <label for="inputPassword" class="control-label pull-right errors">
+            
+        </label>
+        <span class="help-block control-label with-errors pull-right" style="display: inline;"></span>
+        <div class="input-block">
+            <input type="password" class="form-control" name="password" placeholder="您的密碼" required="" autocomplete="current-password">
+            <span class="error-sign"></span>
+            
+                <span class="control-label pull-right" style="font-size: 13px; margin-top: 5px;"><a href="https://hackmd.io/settings/forgotPassword" style="text-decoration: underline;">忘記密碼</a></span>
+            
+        </div>
+    </div>
+
+    <div style="text-align: center; padding-top: 15px; margin-bottom: 0px;">
+        
+            <input type="submit" class="btn btn-success btn-large disabled" formaction="https://hackmd.io/login" value="登入">
+        
+
+        
+    </div>
+</form>
+
+
+
+
+
+
+
+
+    
+        <p class="seperator">或是</p>
+    
+
+    
+        <p>繼續登入，代表您同意<a href="https://hackmd.io/s/terms" target="_blank">服務條款</a>。</p>
+    
+
+    <div class="social-buttons-container">
+    
+    <a href="https://hackmd.io/auth/facebook" class="btn btn-lg btn-block btn-social btn-facebook">
+        <i class="fa fa-facebook"></i> 透過 Facebook 登入
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/twitter" class="btn btn-lg btn-block btn-social btn-twitter">
+        <i class="fa fa-twitter"></i> 透過 Twitter 登入
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/github" class="btn btn-lg btn-block btn-social btn-github">
+        <i class="fa fa-github"></i> 透過 GitHub 登入
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/dropbox" class="btn btn-lg btn-block btn-social btn-dropbox">
+        <i class="fa fa-dropbox"></i> 透過 Dropbox 登入
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/google" class="btn btn-lg btn-block btn-social btn-google">
+        <i class="icon icon-google"></i> 透過 Google 登入
+    </a>
+    
+    
+</div>
+
+
+
+
+
+    <div>
+        <p>第一次使用 HackMD？ <a href="https://hackmd.io/join">註冊</a></p>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- help modal -->
+<div class="modal fade help-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel"><i class="fa fa-question-circle"></i> 說明</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">文件</h3>
+                            </div>
+                            <div class="panel-body">
+                                <a href="https://hackmd.io/c/tutorials-tw" title="Tutorials" target="_blank"><i class="fa fa-dot-circle-o fa-fw" style="margin-right: 3px;"></i>使用教學</a>
+                                <br>
+                                <a href="https://hackmd.io/yaml-metadata" title="YAML Metadata" target="_blank"><i class="fa fa-dot-circle-o fa-fw" style="margin-right: 3px;"></i>YAML Metadata</a>
+                                <br>
+                                <a href="https://hackmd.io/slide-example" title="Slide Example" target="_blank"><i class="fa fa-dot-circle-o fa-fw" style="margin-right: 3px;"></i>簡報範例</a>
+                                <br>
+                                <a href="https://hackmd.io/book-example" title="Book Example" target="_blank"><i class="fa fa-dot-circle-o fa-fw" style="margin-right: 3px;"></i>書本範例</a>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">聯絡方式</h3>
+                            </div>
+                            <div class="panel-body">
+                                <a href="https://www.messenger.com/t/hackmdio" target="_blank"><i class="fa fa-comments fa-fw" style="margin-right: 3px;"></i>與我們聊聊</a>
+                                <br>
+                                <a href="https://github.com/hackmdio/hackmd-io-issues/issues" target="_blank"><i class="fa fa-bug fa-fw" style="margin-right: 3px;"></i>回報問題</a>
+                                <br>
+                                <a href="mailto:support@hackmd.io"><i class="fa fa-envelope fa-fw" style="margin-right: 3px;"></i>寄信給我們</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">快速簡表</h3>
+                            </div>
+                            <div class="panel-body" style="height: calc(100vh - 215px); overflow: auto;">
+                                <table class="table table-condensed table-cheatsheet">
+                                    <thead>
+                                        <tr>
+                                            <th>範例</th>
+                                            <th>語法</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="markdown-body" style="font-family: inherit; font-size: 14px; padding: 0; max-width: inherit;">
+                                        <tr>
+                                            <td>標題</td>
+                                            <td># 標題</td>
+                                        </tr>
+                                        <tr>
+                                            <td><ul><li>無序清單</li></ul></td>
+                                            <td>- 無序清單</td>
+                                        </tr>
+                                        <tr>
+                                            <td><ol><li>有序清單</li></ol></td>
+                                            <td>1. 有序清單</td>
+                                        </tr>
+                                        <tr>
+                                            <td><ul><li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""><label></label>待辦事項</li></ul></td>
+                                            <td>- [ ] 待辦事項</td>
+                                        </tr>
+                                        <tr>
+                                            <td><blockquote> 引用</blockquote></td>
+                                            <td>&gt; 引用</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>粗體</strong></td>
+                                            <td>**粗體**</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i>斜體</i></td>
+                                            <td>*斜體*</td>
+                                        </tr>
+                                        <tr>
+                                            <td><s>刪除線</s></td>
+                                            <td>~~刪除線~~</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19<sup>th</sup></td>
+                                            <td>19^th^</td>
+                                        </tr>
+                                        <tr>
+                                            <td>H<sub>2</sub>O</td>
+                                            <td>H~2~O</td>
+                                        </tr>
+                                        <tr>
+                                            <td><ins>插入文字</ins></td>
+                                            <td>++插入文字++</td>
+                                        </tr>
+                                        <tr>
+                                            <td><mark>標記文字</mark></td>
+                                            <td>==標記文字==</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a>連結</a></td>
+                                            <td>[link text](https:// "title")</td>
+                                        </tr>
+                                        <tr>
+                                            <td>圖片</td>
+                                            <td>![image alt](https:// "title")</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>程式碼</code></td>
+                                            <td>`程式碼`</td>
+                                        </tr>
+                                        <tr>
+                                            <td><pre style="border:none !important;"><code class="javascript hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span></div><div class="code"><span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+</div></div></code></pre></td>
+                                            <td>```javascript<br>var i = 0;<br>```</td>
+                                        </tr>
+                                        <tr>
+                                            <td><img align="absmiddle" alt=":smile:" class="emoji" src="./MetaLite User’s Guide_files/smile.png" title=":smile:"></td>
+                                            <td>:smile:</td>
+                                        </tr>
+                                        <tr>
+                                            <td>外部</td>
+                                            <td>{%youtube youtube_id %}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L<sup>a</sup>T<sub>e</sub>X</td>
+                                            <td>$L^aT_eX$</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="alert alert-info"><p>這是警告區塊</p></div></td>
+                                            <td>:::info<br>這是警告區塊<br>:::</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- revision modal -->
+<div class="modal fade" id="revisionModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: calc(100vw - 20px); max-width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel"><i class="fa fa-history"></i> 版本與 GitHub 同步</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-4" style="max-height: calc(100vh - 215px); overflow: auto;">
+                        <div class="list-group ui-revision-list"></div>
+                    </div>
+                    <div class="col-sm-8" style="height: calc(100vh - 215px); overflow: hidden;">
+                        <textarea id="revisionViewer" style="display:none;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="revisionModalDownload">下載</button>
+                <button type="button" class="btn btn-danger" id="revisionModalRevert">還原</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- revision modal -->
+<div class="modal fade" id="namedRevisionModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: calc(100vw - 20px); max-width: 1200px; height: calc(100vh - 100px);">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <button type="button" class="close back" aria-label="Back"><span aria-hidden="true"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel"><i class="fa fa-history"></i> 版本與 GitHub 同步</h4>
+            </div>
+            <div class="container-fluid modal-body pa-0 github-sync-enabled" style="max-height: calc(100vh - 100px); height: calc(100vh - 100px); overflow: hidden;">
+                
+                <div class="hidden-xs ui-github-sync" style="height: 51px; border-bottom: solid 1px #e7e7e7;">
+                    <div style="display: none;" class="signin-to-connect">
+                        登入後可將筆記連結至 GitHub
+                        <button class="btn btn-success" style="margin-left: 30px" data-toggle="modal" data-target=".signin-modal">註冊並登入</button>
+                        <a href="https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github" target="_blank" style="margin-left: 30px;"><span>了解更多</span><i class="fa fa-angle-right fa-fw"></i></a>
+                    </div>
+                    <div style="" class="no-connect-github">
+                        此筆記尚未連結至 GitHub
+                        <button class="btn btn-primary btn-outline ui-github-pull" style="margin-left: 30px">從 GitHub 拉取</button>
+                        <button class="btn btn-primary btn-outline ui-github-push" style="margin-left: 10px">推送至 GitHub</button>
+                        <a href="https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github" target="_blank" style="margin-left: 30px;"><span>了解更多</span><i class="fa fa-angle-right fa-fw"></i></a>
+                    </div>
+                    <div style="display: none;" class="github-status">
+                        <i class="fa fa-github"></i>&nbsp;<div class="github-path-container"><a target="_blank" class="github-path" title="" data-toggle="tooltip" data-placement="bottom" data-offset="30px,5" data-container=".github-status" data-original-title=""></a></div>
+
+                        <a class="ui-github-badge github-control site-ui-font" style="margin-left: 30px;" data-toggle="popover" data-original-title="" title="">
+                            <i class="fa fa-link fa-18"></i>
+                            嵌入 Badge
+                        </a>
+                        <a class="ui-github-pull github-control" style="margin-left: 30px;">
+                            <i class="fa fa-arrow-down fa-18"></i>
+                            拉取變更
+                        </a>
+                        <a class="ui-github-push github-control" style="margin-left: 30px;">
+                            <i class="fa fa-arrow-up fa-18"></i>
+                            推送變更
+                        </a>
+                        <a class="ui-show-github-synced-settings-modal github-control" style="margin-left: 30px;">
+                            <i class="fa fa-cog fa-18"></i>
+                            同步設定
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-4 pl-0 pr-0 sidebar revision-list-container">
+                    <div class="list-group ui-named-revision-list"></div>
+                </div>
+                <div id="revision-editor-container" class="col-xs-12 col-sm-8 pl-0 pr-0 flex flex-column">
+                    <div id="revisionSummary" style="display: none;" class="flex">
+                        <h4 style="margin-right: 5px;">
+                            <i class="fa fa-history"></i>
+                        </h4>
+
+                        <div class="flex flex-column flex-auto">
+                            <h4 class="summary-title"></h4>
+                            <p class="summary-author-info flex flex-wrap-xs">
+                                <span class="summary-timestamp" style="margin-right: 15px;"></span>
+                                <span>版本由 &nbsp;</span>
+                                <span class="summary-authorship">
+                                    <a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#"></a> &nbsp;
+                                </span>
+                                <span>命名</span>
+                            </p>
+                            <div class="flex items-end justify-between">
+                                <p class="summary-description" style="margin-bottom: 22px;"></p>
+                                <div class="summary-collapse-toggle">
+                                    <span class="expand">
+                                        更多
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="collapse">
+                                        收起
+                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-container dni-xs" id="revisionSummaryDropdown">
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu">
+                                <li role="presentation">
+                                    <a role="menuitem" class="ui-rename-revision" id="rename-named-revision-button" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#">
+                                        <i class="fa fa-pencil fa-fw"></i> 修改
+                                    </a>
+                                </li>
+
+                                <li role="presentation">
+                                    <a role="menuitem" class="ui-delete-revision" tabindex="-1" href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#" id="remove-named-revision-button">
+                                    <i class="fa fa-trash fa-fw"></i> 刪除</a>
+                                </li>
+                            </ul>
+                            <a class="ui-revision-action-menu" data-toggle="dropdown" style="color: #777;" aria-expanded="false"><i class="fa fa-ellipsis-h fa-fw" style="vertical-align: middle; width:100%;"></i>
+                            </a>
+                        </div>
+
+                        <div class="create-revision-button-container flex items-center dni-xs">
+                            <i class="fa fa-question-circle fa-fw tooltip-align-left" style="color: #CDCDCD; margin-right: 10px;" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="將目前的筆記狀態儲存為版本"></i>
+                            <button class="btn btn-outline btn-primary ui-create-revision-button" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="筆記內容與最新版本相同，無法儲存為新版本">
+                                儲存為版本
+                            </button>
+                        </div>
+                    </div>
+
+                    <form data-toggle="validator" id="namedRevisionForm" style="display: none;" class="flex flex-column dni-xs" role="form" novalidate="true">
+                        <h4 style="display: none;" class="revision-timestamp">
+                            <i style="margin-right: 1px;" class="fa fa-history"></i>
+                            <span></span>
+                        </h4>
+                        <div class="flex" style="margin-top: 10px;">
+                            <div class="flex flex-column flex-auto">
+                                <div class="flex items-center form-group">
+                                    <label class="control-label" for="name">
+                                        版本名稱
+                                    </label>
+                                    <input class="form-control" name="name" type="text" placeholder="請輸入版本名稱" required="" maxlength="80">
+                                </div>
+
+                                <div class="flex items-start form-group">
+                                    <label class="control-label" for="description">
+                                        版本描述
+                                    </label>
+                                    <textarea rows="3" class="form-control" name="description" placeholder="請輸入版本描述（非必填）" maxlength="500" style="max-height: 74px; resize: none;"></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-end form-group" style="margin-left: 40px;">
+                                <strong class="ui-state-message" style="position: absolute; top: 20px; color:green; padding-right: 15px;">
+                                    筆記內容與最新版本相同，無法儲存為新版本
+                                </strong>
+                                <button type="button" id="cancel-named-revision-button" class="btn btn-default" style="margin-right: 10px;">取消</button>
+                                <button type="submit" id="submit-named-revision-button" class="btn btn-primary disabled">
+                                    命名此版本
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div style="height: calc(100vh - 140px); overflow: hidden;">
+                        <textarea id="namedrevisionViewer" style="display:none;"></textarea>
+                    </div>
+
+                    <div class="flex justify-between items-center dni-xs" id="revision-operation-panel">
+                        <!-- #region Compare revision dropdown menu -->
+                        <div class="diff-revision-menu flex items-center">
+                            <span>
+                                <input type="checkbox" name="compareWithLastVersion" checked="">
+                            </span>
+                            <span>
+                                與
+                            </span>
+                            <div class="btn-group dropup" id="diff-revision-dropdown-menu">
+                                <button class="btn btn-default dropdown-toggle ui-diff-revision-menu flex items-center justify-between" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span>
+                                        上一版本
+                                    </span>
+                                    <i class="fa fa-angle-down fa-12" aria-hidden="true" style="margin-left: 5px;"></i>
+                                </button>
+                                <ul class="dropdown-menu pull-left" aria-labelledby="diff-revision-dropdown-menu">
+                                    <div class="dropdown-section">
+                                        <div class="section-header">
+                                            選擇一個版本
+                                        </div>
+
+                                        <div class="section-filter">
+                                            <span>
+                                                <input id="showOnlyNamedRevision" type="checkbox" name="showOnlyNamedRevision">
+                                                <label for="showOnlyNamedRevision">
+                                                    只顯示命名版本
+                                                </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="revision-list-container d-flex justify-center">
+                                        <div class="revision-list-inner">
+                                        </div>
+                                        <div class="empty-revision-list">
+                                            <div class="search-icon">
+                                                <img src="./MetaLite User’s Guide_files/empty-search-result.svg" alt="No search result">
+                                            </div>
+                                            沒有找到此版本
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <span>
+                                的差異
+                            </span>
+                        </div>
+                        <!-- #endregion -->
+
+                        <div>
+                            <button type="button" class="btn btn-danger btn-outline ui-revisionModalRevert" style="margin-right: 10px; display: none;">還原</button>
+                            <button type="button" class="btn btn-primary btn-outline ui-revisionModalDownload">下載</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- message modal -->
+<div class="modal fade message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body" style="color:black;">
+              <h5 style="font-weight: 500; font-size: 14px; text-align: left;"></h5>
+              <a target="_blank" style="word-break: break-all;" rel="noopener"></a>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">好的</button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- feedback modal -->
+<div class="modal fade feedback-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="padding: 8px 15px; font-weight: 700">
+        <button type="button" class="close" aria-label="Close" style="font-size: 26px; margin-top: -1px;" data-dismiss="modal">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">使用回饋</h4>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <div class="alert alert-danger" style="display: none;">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true" style="margin-right: 5px"></i>
+          傳送失敗，請再試一次
+        </div>
+        <h3 style="margin-top:5px">感謝您的使用</h3>
+        <p>從 0 到 10 分，請問您向朋友、家人、或同事推薦 HackMD 的可能性有多高？</p>
+        <div class="rating-group" style="margin-top: 15px; margin-bottom: 30px;"><button type="button" class="btn" data-value="0">0</button><button type="button" class="btn" data-value="1">1</button><button type="button" class="btn" data-value="2">2</button><button type="button" class="btn" data-value="3">3</button><button type="button" class="btn" data-value="4">4</button><button type="button" class="btn" data-value="5">5</button><button type="button" class="btn" data-value="6">6</button><button type="button" class="btn" data-value="7">7</button><button type="button" class="btn" data-value="8">8</button><button type="button" class="btn" data-value="9">9</button><button type="button" class="btn" data-value="10">10</button></div>
+        <p style="font-size:16px">希望您可以提供一些建議，幫助我們改善 HackMD 💪</p>
+        <form role="form" data-toggle="validator" novalidate="true">
+          <div class="form-group" style="margin-bottom: 10px;">
+            <textarea name="feedback" class="form-control" placeholder="請輸入您的使用回饋" rows="3" style="resize: none;" required=""></textarea>
+          </div>
+          <div class="checkbox" style="font-size:16px">
+            <label>
+              <input name="engage" type="checkbox" checked="">
+              我願意參與使用者訪談或後續改版測試，讓開發團隊更能完整理解我的需求
+            </label>
+          </div>
+          <div class="form-group flex items-center" style="font-size: 16px; padding-left: 20px;">
+            <label style="font-weight: normal;">我的 Email：</label>
+            &nbsp;
+            <div class="flex-auto pr-0">
+              <input type="email" name="email" class="form-control col-sm-9" aria-describedby="helpId" placeholder="請輸入您的 Email" required="">
+            </div>
+          </div>
+          <div class="modal-footer" style="padding: 15px 0; border: none;">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary ui-feedback-submit disabled">送出回饋</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- feedback success modal -->
+<div class="modal fade feedback-success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 50px 20px; text-align: center;">
+        <img src="./MetaLite User’s Guide_files/feedback.svg" width="85" height="95">
+        <h4>感謝您的使用回饋</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- action modal -->
+<div class="modal fade action-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <p></p>
+            </div>
+            <div class="flex modal-footer">
+                <button type="button" class="btn btn-default cancel flex-one" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary yes flex-one" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- action modal -->
+<div class="modal fade remove-revision-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">移除自訂版本</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h5>您確定要移除版本名稱及版本描述嗎？</h5>
+            </div>
+            <div class="flex modal-footer">
+                <button type="button" class="btn btn-default flex-one" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger flex-one" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- transfer modal -->
+<div class="modal fade transfer-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">轉移筆記擁有權</h4>
+            </div>
+            <div class="modal-body" style="color:black; overflow: inherit; padding-bottom: 0;">
+                轉移到
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="transfer-type" value="team" required="" checked="checked">
+                            <span>
+                                目前已加入的團隊
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="dropdown btn-group ui-transfer-modal-team-dropdown" style="width: 100%; margin-bottom: 10px;">
+                        <button class="btn btn-default text-left dropdown-toggle" type="button" style="width: 100%; height: 40px;" id="dropdownMenuTransferToTeam" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="ui-transfer-modal-team-label" style="line-height: 18px;">
+                                沒有可用的團隊
+                            </span>
+
+                            <span class="caret" style="position: absolute; top: 17px; right: 10px;"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuTransferToTeam" style="width: 100%;"></ul>
+                    </div>
+                    <div class="public-team-notice" style="font-size: 12px; color: #C9302C; display: none;">
+                        提醒您：<span class="team-name"></span> 為<b>開放團隊</b>，您將筆記轉移至此團隊後，<b>網路上的所有人皆可搜尋並看到此筆記</b>。
+                    </div>
+
+                    <div class="radio transfer-team-radio">
+                        <label>
+                            <input type="radio" name="transfer-type" value="member" required="">
+                            <span>
+                                目前的團隊成員
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="dropdown btn-group ui-transfer-modal-team-member-dropdown" style="width: 100%; margin-bottom: 10px;">
+                        <button class="btn btn-default text-left dropdown-toggle" type="button" style="width: 100%; height: 40px;" id="dropdownMenuTransferToTeamMember" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="ui-transfer-modal-team-member-label" style="line-height: 18px;">
+                                沒有可用的團隊成員
+                            </span>
+
+                            <span class="caret" style="position: absolute; top: 17px; right: 10px;"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuTransferToTeamMember" style="width: 100%;"></ul>
+                    </div>
+                </div>
+
+                <div class="error text-danger" style="display: none; margin-top: 10px; color: red;"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+
+                <button type="button" class="btn btn-danger ui-transfer-modal-confirm" disabled="">
+                    轉移
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- github signin modal -->
+<div class="modal fade github-signin-modal text-left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">與 GitHub 同步</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h4 style="border-bottom: 2px solid #cccccc; padding-bottom: 15px; margin: 5px 0px 30px 0px">請授權 HackMD 存取您的 GitHub 帳號</h4>
+                <p style="margin-bottom: 15px;">為了和 GitHub 同步檔案，請先登入 GitHub 並安裝 HackMD 的 GitHub App。 <a href="https://hackmd.io/c/tutorials/%2Fs%2Flink-with-github" target="_blank">了解更多</a></p>
+                <a href="https://github.com/login/oauth/authorize?client_id=Iv1.dce7f04830297ce5&amp;redirect_uri=https%3A%2F%2Fhackmd.io%2Fapi%2Fgithub%2Fsync%2Fcallback" data-href="https://github.com/apps/hackmd-hub/installations/new" type="button" class="btn btn-primary ui-github-signin-button" style="margin-bottom: 30px"><i class="fa fa-github fa-fw"></i>&nbsp;登入 GitHub</a>
+                <p><small style="color: #888888">HackMD 透過 GitHub App 來和 GitHub 上的專案同步，登入後您將可以選擇在哪些專案上安裝 HackMD 的 App。</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- github sync modal -->
+<div class="modal fade github-sync-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+
+                <h4 class="modal-title" id="myModalLabel">
+                    <span class="ui-push-title">將筆記新增至 GitHub</span>
+                    <span class="ui-push-only-title">推送變更至 GitHub</span>
+                    <span class="ui-pull-title">從 GitHub 匯入檔案至筆記</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" style="display: none;">
+                    <i class="fa fa-times ui-close-alert" aria-hidden="true" style="float: right;"></i>
+                    <span class="ui-github-sync-alert-msg"></span>
+                    &nbsp;<a href="https://github.com/login/oauth/authorize?client_id=Iv1.dce7f04830297ce5&amp;redirect_uri=https%3A%2F%2Fhackmd.io%2Fapi%2Fgithub%2Fsync%2Fcallback" target="_blank" class="ui-github-sync-authorize-again" style="display: none;">請按此重新授權</a>
+                </div>
+
+                <div class="github-path-container flex items-center form-group">
+                    <i class="fa fa-github"></i>&nbsp;
+                    <span class="github-path" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title=""></span>
+                </div>
+
+                <div class="choose-repo-file-section">
+                    <h4 class="github-section-title">選擇要推送的檔案路徑</h4>
+                    <div style="display: flex; margin-bottom: 0px; align-items: center;">
+                        <div style="flex: 1">選擇 Repo
+                            <i class="fa fa-question-circle fa-12 tooltip-align-left ui-second-menu-tooltip" style="color: #CDCDCD" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="您可以從您已授權安裝 HackMD App 的 Repo 裡的選擇檔案同步"></i>
+                        </div>
+                        <div style="flex: 2; max-width: calc(100% * 2 / 3);">
+                            <select id="github-repos" placeholder="選擇 Repo" tabindex="-1" class="selectized" disabled="" style="display: none;"><option value="" selected="selected"></option></select><div class="selectize-control single plugin-restore_on_focus plugin-preserve_on_blur"><div class="selectize-input items not-full disabled locked"><input type="select-one" autocomplete="off" tabindex="-1" id="github-repos-selectized" placeholder="選擇 Repo" disabled="" style="width: 67.3906px;"></div><div class="selectize-dropdown single plugin-restore_on_focus plugin-preserve_on_blur" style="display: none;"><div class="selectize-dropdown-content"></div></div></div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 5px 0px 30px 0px; text-align: right;">
+                        <a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#" class="ui-refresh-github-sync-repos" style="margin-right: 10px;">更新<i class="fa fa-rotate-left fa-12" style="margin-left: 3px;"></i></a>
+                        <a href="https://github.com/apps/hackmd-hub/installations/new" target="_blank">授權更多 Repo<i class="fa fa-angle-right fa-12" style="margin-left: 3px;"></i></a>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                        <div style="flex: 1">選擇 Branch
+                            <i class="fa fa-question-circle fa-12 tooltip-align-left ui-second-menu-tooltip" style="color: #CDCDCD" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="您每次推送、拉取時都可以選擇要同步的 branch"></i>
+                        </div>
+                        <div style="flex: 2; max-width: calc(100% * 2 / 3);">
+                            <select id="github-branches" tabindex="-1" class="selectized" disabled="" style="display: none;"><option value="" selected="selected"></option></select><div class="selectize-control single plugin-restore_on_focus plugin-preserve_on_blur"><div class="selectize-input items not-full disabled locked"><input type="select-one" autocomplete="off" tabindex="-1" id="github-branches-selectized" disabled="" style="width: 4px;"></div><div class="selectize-dropdown single plugin-restore_on_focus plugin-preserve_on_blur" style="display: none;"><div class="selectize-dropdown-content"></div></div></div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                        <div style="flex: 1">選擇要同步的檔案</div>
+                        <div style="flex: 2; max-width: calc(100% * 2 / 3);">
+                            <select id="github-files" tabindex="-1" class="selectized" disabled="" style="display: none;"><option value="" selected="selected"></option></select><div class="selectize-control single plugin-restore_on_focus plugin-preserve_on_blur"><div class="selectize-input items not-full disabled locked"><input type="select-one" autocomplete="off" tabindex="-1" id="github-files-selectized" disabled="" style="width: 4px;"></div><div class="selectize-dropdown single plugin-restore_on_focus plugin-preserve_on_blur" style="display: none;"><div class="selectize-dropdown-content"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choose-branch-section">
+                    <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                        <div style="flex: 1">選擇 Branch
+                            <i class="fa fa-question-circle fa-12 tooltip-align-left ui-second-menu-tooltip" style="color: #CDCDCD" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="您每次推送、拉取時都可以選擇要同步的 branch"></i>
+                        </div>
+                        <div style="flex: 2; max-width: calc(100% * 2 / 3);">
+                            <select id="github-push-branches" placeholder="選擇或建立 Branch"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex ui-push-mode" style="display: none">
+                    <div style="flex: 1">選取推送的版本
+                        <i class="fa fa-question-circle fa-12 tooltip-align-left ui-second-menu-tooltip" style="color: #CDCDCD" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="HackMD 會將版本名稱及描述合併為提交訊息推送至 GitHub"></i>
+                    </div>
+                    <div style="flex: 2; max-width: calc(100% * 2 / 3);" id="version-select-tabs">
+                        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px;">
+                            <li role="presentation" class="ui-create-new-version">
+                                <a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#create-new-version" aria-controls="create-new-version" role="tab" data-toggle="tab" style="height: 100%;">
+                                    <i class="fa fa-check visibility-on-active" aria-hidden="true" style="margin-right:  3px;"></i>建立新版本並推送</a>
+                            </li>
+                            <li role="presentation" class="ui-select-from-existing-version">
+                                <a href="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view#select-from-existing-version" aria-controls="select-from-existing-version" role="tab" data-toggle="tab" style="height: 100%;">
+                                    <i class="fa fa-check visibility-on-active" aria-hidden="true" style="margin-right:  3px;"></i>從已有版本選擇</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="create-new-version">
+                                <form data-toggle="validator" role="form" class="form create-version-form" novalidate="true">
+    <div class="form-group">
+        <div class="ui-revision-timestamp">
+            <i class="fa fa-clock-o fa-fw"></i>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">版本名稱</label>
+        <input type="text" class="form-control" placeholder="請輸入版本名稱" required="" maxlength="80">
+    </div>
+
+    <div class="form-group">
+        <label for="">版本描述</label>
+        <textarea class="form-control" style="width: 100%; height: 76px; resize: vertical;" placeholder="請輸入版本描述（非必填）" maxlength="500"></textarea>
+    </div>
+    <div class="github-sync-button-container">
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-right: 5px;">取消</button>
+        <button type="submit" class="btn btn-primary ui-github-sync-button disabled" disabled="">推送</button>
+    </div>
+</form>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="select-from-existing-version">
+                                <div class="version-list flex flex-column">
+                                </div>
+                                <div class="github-sync-button-container">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-right: 5px;">取消</button>
+                                    <button type="button" class="btn btn-primary ui-github-sync-button" disabled="">推送</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-pull-mode" style="text-align: right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-right: 5px;">取消</button>
+                    <button type="button" class="btn btn-primary ui-github-sync-button" disabled="">匯入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- github sync pull modal -->
+<div class="modal fade" id="githubSyncPullModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: calc(100vw - 20px); max-width: 1200px; height: calc(100vh - 100px);">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                
+                <h4 class="modal-title" id="mySmallModalLabel">從 GitHub 拉取變更</h4>
+            </div>
+            <div class="container-fluid modal-body pa-0 flex flex-column" style="max-height: calc(100vh - 100px); height: calc(100vh - 100px); overflow: hidden;">
+                <div class="github-sync-pull-error flex flex-column items-center justify-center" style="display: none;">
+                    <h3></h3>
+                </div>
+
+                <div class="github-path-container flex items-center">
+                    <i class="fa fa-github"></i>&nbsp;
+                    <span class="github-path" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title=""></span>
+                </div>
+
+                <div class="github-pull-form">
+                    <form class="form" id="github-sync-pull-form">
+                        <div class="form-group flex justify-between items-center">
+                            <label class="flex-shrink-0 mr-1">拉取自 Branch</label>
+
+                            <select id="github-pull-branches" placeholder="選擇 Branch"></select>
+
+                            <div class="pull-actions flex-shrink-0 ml-1">
+                                <button type="button" data-dismiss="modal" class="btn btn-default" style="margin-right: 10px;">取消</button>
+
+                                <button type="submit" class="btn btn-primary">
+                                    套用全部變更
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pull-view-indicator flex">
+                            <div class="flex-one github">
+                                <small>來自 GitHub 的檔案</small>
+                            </div>
+                            <div class="flex-one source">
+                                <small>來自 HackMD 的檔案</small>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="pull-editor-container flex flex-column">
+                    <div id="github-sync-pull-editor" class="flex-one"></div>
+                    <div class="ui-spinner unselectable hidden-print" style="display: none;"><div class="spinner" role="progressbar" style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;"><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-0-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(0deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-1-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(32deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-2-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(65deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-3-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(98deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-4-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(130deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-5-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(163deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-6-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(196deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-7-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(229deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-8-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(261deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-9-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(294deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-10-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(327deg) translate(30px, 0px); border-radius: 0px;"></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- github synced settings modal -->
+<div class="modal fade github-synced-settings-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">同步設定</h4>
+            </div>
+            <div class="modal-body" style="color:black;">
+                <h4 style="border-bottom: 2px solid #cccccc; padding-bottom: 15px; margin: 5px 0px 30px 0px">與此筆記同步的檔案</h4>
+                <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                    <div style="flex: 1">建立同步的使用者</div>
+                    <div style="flex: 2; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="ui-github-synced-user">
+                        <a target="_blank" class="ui-github-synced-user-photo"><img class="ui-avatar" width="30" height="30" style="border-radius: 100%; margin-right: 10px;" src="https://hackmd.io/zjrUfNetTYi_8u8y875TdQ?view"></a>
+                        <a target="_blank" class="ui-github-synced-user-name"></a>
+                    </div>
+                </div>
+                <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                    <div style="flex: 1">同步的檔案路徑</div>
+                    <div style="flex: 2; word-break: break-all" class="ui-github-synced-filepath"></div>
+                </div>
+                <div style="display: flex; margin-bottom: 30px; align-items: center;">
+                    <div style="flex: 1">最近使用的 Branch
+                        <i class="fa fa-question-circle fa-12 tooltip-align-left ui-second-menu-tooltip" style="color: #CDCDCD" title="" data-toggle="tooltip" data-placement="bottom" data-offset="0,5" data-original-title="您可以在推送、拉取時選擇其它的分支"></i>
+                    </div>
+                    <div style="flex: 2; word-break: break-all" class="ui-github-synced-recent-branch"></div>
+                </div>
+                <h4 style="border-bottom: 2px solid #cccccc; padding-bottom: 15px; margin: 5px 0px 30px 0px">危險區域</h4>
+                <div style="display: flex; margin-bottom: 5px;">
+                    <div style="flex: 1; margin-top: 7px;">取消同步</div>
+                    <div style="flex: 2">
+                        <button type="button" class="btn btn-danger btn-outline ui-github-cancel-sync-button">取消同步</button>
+                        <div style="margin-top: 15px; font-size: 12px; color: #888;">一旦移除與 GitHub 指定檔案的同步，未來將不會有變更通知。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- loading modal -->
+<div class="modal fade loading-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="ui-loading" style="height: 139px; width: 139px; position: relative; margin: 0 auto; top: 10px;"><div class="spinner" role="progressbar" style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;"><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-0-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(0deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-1-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(32deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-2-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(65deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-3-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(98deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-4-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(130deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-5-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(163deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-6-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(196deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-7-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(229deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-8-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(261deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-9-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(294deg) translate(30px, 0px); border-radius: 0px;"></div></div><div style="position: absolute; top: -1px; transform: translate3d(0px, 0px, 0px); opacity: 0.25; animation: 0.909091s linear 0s infinite normal none running opacity-60-25-10-11;"><div style="position: absolute; width: 22px; height: 2px; background: rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(327deg) translate(30px, 0px); border-radius: 0px;"></div></div></div></div>
+                    <p class="ui-loading-msg" style="text-align: center; margin-bottom: 35px; position: relative; top: 15px;">同步中請稍後</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- push failed modal -->
+<div class="modal fade push-failed-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="max-width: 400px; margin: auto;">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">推送變更失敗</h4>
+          </div>
+          <div class="modal-body" style="text-align: center;">
+              <img src="./MetaLite User’s Guide_files/push-xx.svg" width="85px" height="96px" style="margin-top: 5px;">
+              <div style="font-size: 16px; text-align: left; margin-top: 20px; word-break: break-all;"></div>
+          </div>
+          <div class="modal-footer" style="border: none; padding-top: 5px;">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">重新推送</button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- push success modal -->
+<div class="modal fade push-success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="max-width: 400px; margin: auto;">
+      <div class="modal-content">
+          <div class="modal-body" style="text-align: center; margin: 35px 0px;">
+                <img src="./MetaLite User’s Guide_files/push-done.svg" width="85px" height="94.7px">
+                <div style="font-size: 18px; margin-top: 20px;">
+                    推送成功
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+    
+    
+<script async="" src="./MetaLite User’s Guide_files/js"></script>
+<script nonce="">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    let userid = (document.cookie.match('(^|; )userid=([^;]*)')||0)[2];
+    gtag('config', 'UA-60728495-1', {'user_id': userid});
+</script>
+<script src="./MetaLite User’s Guide_files/bundle.min.js" crossorigin="anonymous"></script>
+<script nonce="">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLW9Z3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script src="./MetaLite User’s Guide_files/i18n.js"></script>
+
+ <script src="./MetaLite User’s Guide_files/font-vendor.3c28db3001b8bd6f1d3f.js" defer="defer"></script><script src="./MetaLite User’s Guide_files/common-vendor.d485f77e88ea7ed44236.js" defer="defer"></script><script src="./MetaLite User’s Guide_files/index-vendor.9f572be54ba15499dc49.js" defer="defer"></script><script src="./MetaLite User’s Guide_files/index-common.1429405d3d9771736815.js" defer="defer"></script><script src="./MetaLite User’s Guide_files/index.88a0138228fd75cae1f0.js" defer="defer"></script>
+
+
+
+
+
+
+
+<span style="position: absolute; top: -99999px; left: -99999px; width: auto; padding: 0px; white-space: pre; letter-spacing: 0.35px; font-size: 14px; font-family: &quot;Source Sans Pro&quot;, Helvetica, Arial, &quot;PingFang TC&quot;, &quot;Microsoft JhengHei&quot;, 微軟正黑, sans-serif; font-weight: 400; text-transform: none;">選擇 Repo</span><script type="text/javascript" src="./MetaLite User’s Guide_files/dropins.js" id="dropboxjs" data-app-key="rdoizrlnkuha23r" async="" defer=""></script><script type="text/javascript" src="./MetaLite User’s Guide_files/api.js" async="" defer="" gapi_processed="true"></script><script type="text/javascript" src="./MetaLite User’s Guide_files/client.js" async="" defer="" gapi_processed="true"></script><iframe id="apiproxy2a71fbd67c831a535aa2e64347556e64abc978030.179236261" name="apiproxy2a71fbd67c831a535aa2e64347556e64abc978030.179236261" src="./MetaLite User’s Guide_files/proxy.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px; display: none;"></iframe></body></html>

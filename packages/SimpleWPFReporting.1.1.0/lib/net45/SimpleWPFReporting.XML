@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleWPFReporting</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleWPFReporting.Report.PrintReport(System.Windows.Controls.StackPanel,System.Object,System.Windows.Thickness,SimpleWPFReporting.ReportOrientation,System.Windows.ResourceDictionary,System.Windows.Media.Brush,System.Windows.DataTemplate,System.Boolean,System.Windows.DataTemplate,System.Boolean)">
+            <summary>
+            Divides elements of reportContainer into pages and prints them
+            </summary>
+            <param name="reportContainer">StackPanel containing report elements</param>
+            <param name="dataContext">Data Context used in the report</param>
+            <param name="margin">Margin of a report page</param>
+            <param name="orientation">Landscape or Portrait orientation</param>
+            <param name="resourceDictionary">Resources used in report</param>
+            <param name="backgroundBrush">Brush that will be used as background for report page</param>
+            <param name="reportHeaderDataTemplate">
+            Optional header for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="headerOnlyOnTheFirstPage">Use header only on the first page (default is false)</param>
+            <param name="reportFooterDataTemplate">
+            Optional footer for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="footerStartsFromTheSecondPage">Do not use footer on the first page (default is false)</param> 
+        </member>
+        <member name="M:SimpleWPFReporting.Report.PrintReport(System.Windows.Controls.StackPanel,System.Object,SimpleWPFReporting.ReportOrientation,System.Windows.ResourceDictionary,System.Windows.Media.Brush,System.Windows.DataTemplate,System.Boolean,System.Windows.DataTemplate,System.Boolean)">
+            <summary>
+            Divides elements of reportContainer into pages and prints them
+            NOTE: this overload uses default margin of 25
+            </summary>
+            <param name="reportContainer">StackPanel containing report elements</param>
+            <param name="dataContext">Data Context used in the report</param>
+            <param name="orientation">Landscape or Portrait orientation</param>
+            <param name="resourceDictionary">Resources used in report</param>
+            <param name="backgroundBrush">Brush that will be used as background for report page</param>
+            <param name="reportHeaderDataTemplate">
+            Optional header for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="headerOnlyOnTheFirstPage">Use header only on the first page (default is false)</param>
+            <param name="reportFooterDataTemplate">
+            Optional footer for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="footerStartsFromTheSecondPage">Do not use footer on the first page (default is false)</param> 
+        </member>
+        <member name="M:SimpleWPFReporting.Report.ExportReportAsPdf(System.Windows.Controls.StackPanel,System.Object,System.Windows.Thickness,SimpleWPFReporting.ReportOrientation,System.Windows.ResourceDictionary,System.Windows.Media.Brush,System.Windows.DataTemplate,System.Boolean,System.Windows.DataTemplate,System.Boolean)">
+            <summary>
+            Divides elements of reportContainer into pages and exports them as PDF
+            </summary>
+            <param name="reportContainer">StackPanel containing report elements</param>
+            <param name="dataContext">Data Context used in the report</param> 
+            <param name="margin">Margin of a report page</param>
+            <param name="orientation">Landscape or Portrait orientation</param>
+            <param name="resourceDictionary">Resources used in report</param>
+            <param name="backgroundBrush">Brush that will be used as background for report page</param>
+            <param name="reportHeaderDataTemplate">
+            Optional header for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="headerOnlyOnTheFirstPage">Use header only on the first page (default is false)</param>
+            <param name="reportFooterDataTemplate">
+            Optional footer for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="footerStartsFromTheSecondPage">Do not use footer on the first page (default is false)</param> 
+        </member>
+        <member name="M:SimpleWPFReporting.Report.ExportReportAsPdf(System.Windows.Controls.StackPanel,System.Object,SimpleWPFReporting.ReportOrientation,System.Windows.ResourceDictionary,System.Windows.Media.Brush,System.Windows.DataTemplate,System.Boolean,System.Windows.DataTemplate,System.Boolean)">
+            <summary>
+            Divides elements of reportContainer into pages and exports them as PDF
+            NOTE: this overload uses default margin of 25
+            </summary>
+            <param name="reportContainer">StackPanel containing report elements</param>
+            <param name="dataContext">Data Context used in the report</param> 
+            <param name="orientation">Landscape or Portrait orientation</param>
+            <param name="resourceDictionary">Resources used in report</param>
+            <param name="backgroundBrush">Brush that will be used as background for report page</param>
+            <param name="reportHeaderDataTemplate">
+            Optional header for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="headerOnlyOnTheFirstPage">Use header only on the first page (default is false)</param>
+            <param name="reportFooterDataTemplate">
+            Optional footer for each page
+            Note: You can use DynamicResource PageNumber in this template to display page number
+            </param>
+            <param name="footerStartsFromTheSecondPage">Do not use footer on the first page (default is false)</param> 
+        </member>
+    </members>
+</doc>
