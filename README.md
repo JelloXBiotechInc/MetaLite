@@ -25,4 +25,8 @@ MetaLite software developed by JelloX Biotech Inc. is a Research Use Only (RUO) 
  - [MahApps](https://github.com/MahApps/MahApps.Metro) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg "MIT")](https://github.com/MahApps/MahApps.Metro/blob/develop/LICENSE) For UI.
  - [Html Agility Pack](https://github.com/zzzprojects/html-agility-pack) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg "MIT")](https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE) For embeded web browser html manipulate.
  
- 
+## MetaLite wiki
+If you want know more about. Please check out [MetaLite wiki](https://github.com/JelloXBiotechInc/MetaLite/wiki) on github.
+
+## About JelloX
+You can check our offical website [JelloX Biotech Inc.](https://jellox.com/).
