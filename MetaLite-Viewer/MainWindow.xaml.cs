@@ -74,7 +74,7 @@ namespace MetaLite_Viewer
 
 			InitializeComponent();
 			VersionGenerator();
-			//CheckVersion();
+			CheckVersion();
 			HugeViewConsumer();
 			HugeViewProducer();
 
@@ -255,7 +255,7 @@ namespace MetaLite_Viewer
 		{
 			try
 			{
-				var html = "https://gitlab.com/windwaker1121/versiontest/-/raw/master/version.txt";
+				var html = "https://raw.githubusercontent.com/JelloXBiotechInc/MetaLite/main/MetaLite-Viewer/version.txt";
 				HtmlWeb web = new HtmlWeb() { UseCookies = false };
 				var htmlDoc = web.LoadFromWebAsync(html);
 				if (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version < new Version(htmlDoc.Result.ParsedText))
