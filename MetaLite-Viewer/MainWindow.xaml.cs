@@ -2951,7 +2951,7 @@ namespace MetaLite_Viewer
 				}
 			}
 
-			if (e.LeftButton == MouseButtonState.Pressed && Resource.isLayerExist)
+			if (e.LeftButton == MouseButtonState.Pressed && Resource.isDataReaded)
 			{
 				var scrollViewerPoint = Mouse.GetPosition(scrollViewer);
 				var tranlatedPoint = new Point(MousePos.MouseX * Resource.nowImageData.AnnotationRatio,
