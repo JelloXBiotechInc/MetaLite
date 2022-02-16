@@ -1,6 +1,6 @@
-# MetaLite
+# MetaLite-Community
 
-MetaLite software developed by JelloX Biotech Inc. is a Research Use Only (RUO) computer-assisted image analysis software.
+MetaLite-Community software developed by JelloX Biotech Inc. is a Research Use Only (RUO) computer-assisted image analysis software.
 <div style="text-align:center" markdown="1">
 
 ![](https://i.imgur.com/fiCjVMt.png)
@@ -14,7 +14,7 @@ MetaLite software developed by JelloX Biotech Inc. is a Research Use Only (RUO) 
  - [OpenSlide](https://github.com/openslide/openslide) [![license](https://img.shields.io/badge/license-lgpl_2.1-blue.svg "lgpl_2_1")](https://github.com/openslide/openslide/blob/main/lgpl-2.1.txt) OpenSlide `.dll`s compiled for windows OS from C code. You can find pre-compiled [Windows Binaries](https://openslide.org/download/) in OpenSilde official website.
 - [OpenSlideNET](https://github.com/yigolden/OpenSlideNET) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg "MIT")](https://github.com/yigolden/OpenSlideNET/blob/master/LICENSE) Interop with the compiled OpenSlide ```.dll```s in C# code. 
 - [WPFPixelShaderLibrary](https://github.com/Unknown6656/WPFPixelShaderLibrary/tree/master) [![license](https://img.shields.io/badge/license-GPL-blue.svg "GPL")](https://github.com/Unknown6656/WPFPixelShaderLibrary/blob/master/LICENSE) For psuedo staining function. Use [HLSL](https://docs.microsoft.com/zh-tw/windows/win32/direct3dhlsl/dx-graphics-hlsl) to modify UIElement runtime rendering.
- - [ColorPickerWPF](https://github.com/drogoganor/ColorPickerWPF) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg "MIT")](https://github.com/drogoganor/ColorPickerWPF/blob/master/LICENSE) Customized the color picker for MetaLite.
+ - [ColorPickerWPF](https://github.com/drogoganor/ColorPickerWPF) [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg "MIT")](https://github.com/drogoganor/ColorPickerWPF/blob/master/LICENSE) Customized the color picker for MetaLite-Community.
  - [OpenCvSharp](https://github.com/shimat/opencvsharp) [![license](https://img.shields.io/badge/license-Apache_2.0-blue.svg "Apache 2.0")](https://github.com/shimat/opencvsharp/blob/master/LICENSE) Image processing.
  - [Fellow Oak DICOM](https://github.com/fo-dicom/fo-dicom) [![license](https://img.shields.io/badge/license-MS--PL-blue.svg "MS-PL")](https://github.com/fo-dicom/fo-dicom/blob/development/License.txt) Wrapping DICOM reading mathod into OpenSlideNET API.
  - [ImageSharp](https://github.com/SixLabors/ImageSharp) [![license](https://img.shields.io/badge/license-Apache_2.0-blue.svg "Apache 2.0")](https://github.com/SixLabors/ImageSharp/blob/master/LICENSE)
